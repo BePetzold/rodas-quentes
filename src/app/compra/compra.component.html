@@ -1,0 +1,10 @@
+<div>
+    <button type="button" class="btn btn-danger"(click)="deleteBool()">Delete</button>
+</div>
+
+<div class="flex-container">
+      <div *ngFor="let marca of marcas; let i=index">
+        {{marca.name}}
+        <button *ngIf="show" (click)="deleteMarca(i)">DELETE</button>
+      </div>
+</div>

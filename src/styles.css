@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+
+body {
+    background-image: url("http://papers.co/wallpaper/papers.co-mh75-aspalt-hd-skid-marks-nature-pattern-36-3840x2400-4k-wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
