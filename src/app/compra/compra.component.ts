@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarrosServiceService } from '../carros-service.service';
+import { stringify } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-compra',
@@ -13,9 +14,10 @@ export class CompraComponent implements OnInit {
     { id: 3, marca: "Chevrolet", modelo: "Camaro", valor: 333000, ano: 2015 },
     { id: 4, marca: "Volkswagen", modelo: "Tiguan", valor: 3000, ano: 1995 },
     { id: 5, marca: "Ford", modelo: "Mustang", valor: 43000, ano: 1885 },
-  ]
+  ];
 
-  marcas: any = [];
+  marcas = [];
+  marcasFiltro = [];
 
   show: boolean = false;
 
@@ -26,26 +28,37 @@ export class CompraComponent implements OnInit {
   ngOnInit() {
     this.api.getMarcas().subscribe(res => {
       this.marcas = res;
-      console.log(JSON.stringify(this.marcas));
+      this.sortMarcas();
+      this.marcasFiltro = this.marcas.slice(0);
+      console.log(this.marcasFiltro);
     })
-    let aux: any;
-    for (let i=0; i < this.marcas.length; i++){
-      if(this.marcas.name[i] < this.marcas.name[i+1]){
-        
-      }else{
-
-      }
-    }
   }
 
   deleteBool() {
+    console.log(this.marcas.length);
     this.show = !this.show;
   }
 
+  aplicaFiltro(value){
+
+    this.marcasFiltro = this.marcas.map(function(m) {
+      if (m.name.startsWith(value))
+        return m;
+    })
+  }
+
+  sortMarcas(){
+    this.marcas.sort((left,right): number =>{
+      if(left.name < right.name){
+        return -1;
+      }if(left.name > right.name){
+        return 1;
+      }
+      return 0;
+    })
+  }
 
   deleteMarca(i) {
-    console.log(i)
-    this.marcas.splice(i, 1)
-    console.log(this.marcas)
+    this.marcas.splice(i, 1);   
   }
 }
