@@ -10,8 +10,8 @@
 
 
 <div class="flex-container">
-  <div *ngFor="let marca of marcasFiltro; let i=index">
+  <div *ngFor="let marca of marcasFiltro">
     {{marca.name}}
-    <button *ngIf="show" (click)="deleteMarca(i)">COMPRAR</button>
+    <button *ngIf="show" (click)="deleteMarca(marca.name)">COMPRAR</button>
   </div>
 </div>

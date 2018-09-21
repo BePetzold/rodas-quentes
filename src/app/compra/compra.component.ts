@@ -29,22 +29,20 @@ export class CompraComponent implements OnInit {
       this.marcas = res;
       this.sortMarcas();
       this.marcasFiltro = this.marcas.slice(0);
-      console.log(this.marcasFiltro);
     })
   }
 
   deleteBool() {
-    console.log(this.marcas.length);
     this.show = !this.show;
   }
 
   aplicaFiltro(value) {
-    console.log(value);
+    this.marcasFiltro = [];
 
-    this.marcasFiltro = this.marcas.map(function (m) {
-      if (value != null && m.name.startsWith(value.toUpperCase()))
-        return m;
+    this.marcasFiltro = this.marcas.filter(function (m) {
+      return m.name.toUpperCase().startsWith(value.toUpperCase());
     })
+
   }
 
   sortMarcas() {
@@ -58,9 +56,14 @@ export class CompraComponent implements OnInit {
     })
   }
 
-  deleteMarca(i) {
-    this.marcas.splice(i, 1);
-    this.marcasFiltro.splice(i, 1);
+  deleteMarca(name) {
+    this.marcas = this.marcas.filter(function (m) {
+      return m.name != name;
+    })
+
+    this.updateMarca();
+
+
   }
 
   addMarca(marca) {
@@ -78,6 +81,5 @@ export class CompraComponent implements OnInit {
   updateMarca() {
     this.sortMarcas();
     this.marcasFiltro = this.marcas.slice(0);
-    console.log(this.marcasFiltro);
   }
 }
