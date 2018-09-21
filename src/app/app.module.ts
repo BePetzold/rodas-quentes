@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { OrderModule } from 'ngx-order-pipe';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
+import { VeiculosComponent } from './veiculos/veiculos.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { AppRoutingModule } from './app-routing.module';
     CompraComponent,
     VendaComponent,
     NavbarComponent,
+    VeiculosComponent,
     
   ],
   imports: [

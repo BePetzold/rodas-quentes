@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { CarrosServiceService } from '../carros-service.service';
+//import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 
 
@@ -14,6 +15,8 @@ export class CompraComponent implements OnInit {
   txtFiltro: string = "";
   marcas = [];
   marcasFiltro = [];
+
+  selected_marca: any = null;
 
   show: boolean = false;
 
@@ -62,8 +65,6 @@ export class CompraComponent implements OnInit {
     })
 
     this.updateMarca();
-
-
   }
 
   addMarca(marca) {
@@ -82,4 +83,20 @@ export class CompraComponent implements OnInit {
     this.sortMarcas();
     this.marcasFiltro = this.marcas.slice(0);
   }
+
+  mostraCarros(marca){
+    this.selected_marca = marca;
+
+
+    // let dialogRef = dialog.open(UserProfileComponent, {
+    //   height: '400px',
+    //   width: '600px',
+    // });
+    
+
+  }
+
+
+  
+
 }
