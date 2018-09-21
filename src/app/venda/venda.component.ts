@@ -39,13 +39,14 @@ export class VendaComponent implements OnInit {
   }
 
   aplicaFiltro(value) {
-    console.log(value);
+    this.marcasFiltro = [];
 
-    this.marcasFiltro = this.marcas.map(function (m) {
-      if (value != null && m.name.startsWith(value.toUpperCase()))
-        return m;
+    this.marcasFiltro = this.marcas.filter(function (m) {
+      return m.name.toUpperCase().startsWith(value.toUpperCase());
     })
+
   }
+
 
   sortMarcas() {
     this.marcas.sort((left, right): number => {
