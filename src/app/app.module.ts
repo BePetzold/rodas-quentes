@@ -11,6 +11,8 @@ import { OrderModule } from 'ngx-order-pipe';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { VeiculosComponent } from './veiculos/veiculos.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -27,9 +29,14 @@ import { VeiculosComponent } from './veiculos/veiculos.component';
     HttpModule,
     OrderModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule
     ],
-  providers: [],
+  providers: [
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

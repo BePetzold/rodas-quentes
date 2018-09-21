@@ -1,6 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { CarrosServiceService } from '../carros-service.service';
-//import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { VeiculosComponent } from '../veiculos/veiculos.component';
 
 
 
@@ -20,7 +21,7 @@ export class CompraComponent implements OnInit {
 
   show: boolean = false;
 
-  constructor(private api: CarrosServiceService) {
+  constructor(private api: CarrosServiceService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -88,10 +89,11 @@ export class CompraComponent implements OnInit {
     this.selected_marca = marca;
 
 
-    // let dialogRef = dialog.open(UserProfileComponent, {
-    //   height: '400px',
-    //   width: '600px',
-    // });
+    let dialogRef = this.dialog.open(VeiculosComponent, {
+      width: '600px',
+    });
+    dialogRef.updatePosition();
+
     
 
   }
