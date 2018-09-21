@@ -1,14 +1,17 @@
-<div>
-    <button type="button" class="btn btn-danger"(click)="deleteBool()">Delete</button>
+
+  <div>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" #filtro (keypress)="aplicaFiltro(filtro.value)" >
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2" type="search" aria-label="Pesquisar" #filtro (keyup)="aplicaFiltro(filtro.value)">
+      <button class="btn btn-success my-2 my-sm-0" type="submit">Pesquisar</button>
+      <button type="button" class="btn btn-danger" (click)="deleteBool()">Comprar</button>
     </form>
-</div>
+
+  </div>
+
 
 <div class="flex-container">
-      <div *ngFor="let marca of marcasFiltro">
-        {{marca.name}}
-        <button *ngIf="-show" (click)="deleteMarca(i)">DELETE</button>
-      </div>
+  <div *ngFor="let marca of marcasFiltro; let i=index">
+    {{marca.name}}
+    <button *ngIf="show" (click)="deleteMarca(i)">COMPRAR</button>
+  </div>
 </div>
