@@ -1,11 +1,12 @@
-
-
-<h1 mat-dialog-title>Carros</h1>
+<h1 mat-dialog-title align="center">
+  <font color="white">CARROS</font>
+</h1>
 <div mat-dialog-content>
-  <div *ngFor="let veiculo of veiculos">
-    {{veiculo.name}}
+  <div *ngFor="let veiculo of veiculos" style="text-align: center">
+    <font color="white">{{veiculo.name}} </font>
   </div>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="closeDialog()">Ok</button>
+<br>
+<div mat-dialog-actions style="margin-left: 42%">
+  <button mat-button (click)="closeDialog()" class="btn btn-outline-light">FECHAR</button>
 </div>
