@@ -20,12 +20,16 @@ export class CompraComponent implements OnInit {
   show: boolean = false;
   selected_marca: any = null;
 
+  wait = false; 
+
   constructor(private _data: DataService, public dialog: MatDialog) {
   }
 
-  ngOnInit() {
+  async ngOnInit() { 
+    
+    await this.delay(300);
     this.carregarMarcas();
-    console.log(this.marcasFiltro);
+    
   }
 
   carregarMarcas() {
@@ -64,12 +68,16 @@ export class CompraComponent implements OnInit {
     this.marcasFiltro = this.marcas;
   }
 
-  mostraCarros(marca){
-    this.selected_marca = marca;
+  mostraCarros(id_marca){
+    this._data.setVeiculos(id_marca);
     let dialogRef = this.dialog.open(VeiculosComponent, {
       width: '600px',
     });
     dialogRef.updatePosition();
+  }
+
+  async delay(ms: number){
+    return new Promise( resolve => setTimeout(resolve, ms) );
   }
 
 }

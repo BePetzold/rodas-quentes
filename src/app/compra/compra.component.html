@@ -13,10 +13,7 @@
   <div *ngFor="let marca of marcasFiltro">
     {{marca.name}}
     <button *ngIf="show" (click)="deleteMarca(marca.name)">Comprar</button>
-    <button *ngIf="show" (click)="mostraCarros(marca)">Detalhes</button>
-    <div *ngIf="selected_marca === marca">
-      <!-- <app-veiculos [marca]=selected_marca></app-veiculos> -->
-    </div>
+    <button *ngIf="show" (click)="mostraCarros(marca.id)">Detalhes</button>
   
   </div>
 

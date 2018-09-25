@@ -8,6 +8,7 @@ import { CarrosServiceService } from './carros-service.service';
 export class DataService {
 
   carregar = [];
+  veiculos:any = []
 
   constructor(private api: CarrosServiceService) {
     this.preenArr();
@@ -40,5 +41,15 @@ export class DataService {
 
   changeMarca(marca) {
     this.carregar = marca;
+  }
+
+  setVeiculos(marca) {
+    this.api.getVeiculosMarca(marca).subscribe(res =>{
+      this.veiculos = res;
+    });
+  }
+
+  getVeiculos(){
+    return this.veiculos;
   }
 }
