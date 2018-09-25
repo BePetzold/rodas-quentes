@@ -19,7 +19,7 @@ export class VeiculosComponent implements OnInit {
     //   this.carros = res;
     // })
 
-    this.api.getVeiculosMarca('21').subscribe(res => {
+    this.api.getVeiculosMarca(this.marca).subscribe(res => {
       this.carros = res;
     })
   }
