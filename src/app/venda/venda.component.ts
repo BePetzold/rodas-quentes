@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarrosServiceService } from '../carros-service.service';
-
-
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-venda',
@@ -10,58 +8,19 @@ import { CarrosServiceService } from '../carros-service.service';
 })
 export class VendaComponent implements OnInit {
 
-
   txtFiltro: string = "";
   marcas = [];
   marcasFiltro = [];
 
-  show: boolean = false;
-
-  constructor(private api: CarrosServiceService) {
-  }
+  constructor(private _data: DataService) {}
 
   ngOnInit() {
-    this.preenArr();
+    this.carregarMarcas();
   }
 
-  preenArr() {
-    this.api.getMarcas().subscribe(res => {
-      this.marcas = res;
-      this.sortMarcas();
-      this.marcasFiltro = this.marcas.slice(0);
-      console.log(this.marcasFiltro);
-    })
-  }
-
-  deleteBool() {
-    console.log(this.marcas.length);
-    this.show = !this.show;
-  }
-
-  aplicaFiltro(value) {
-    this.marcasFiltro = [];
-
-    this.marcasFiltro = this.marcas.filter(function (m) {
-      return m.name.toUpperCase().startsWith(value.toUpperCase());
-    })
-
-  }
-
-
-  sortMarcas() {
-    this.marcas.sort((left, right): number => {
-      if (left.name < right.name) {
-        return -1;
-      } if (left.name > right.name) {
-        return 1;
-      }
-      return 0;
-    })
-  }
-
-  deleteMarca(i) {
-    this.marcas.splice(i, 1);
-    this.marcasFiltro.splice(i, 1);
+  carregarMarcas() {
+    this.marcasFiltro = this._data.carregar;
+    this.marcas = this._data.carregar;
   }
 
   addMarca(marca) {
@@ -73,12 +32,25 @@ export class VendaComponent implements OnInit {
       id: 0
     }
     this.marcas.push(m);
-    this.updateMarca();
+    this.sortMarcas();
+    this._data.changeMarca(this.marcas);
   }
 
-  updateMarca() {
-    this.sortMarcas();
-    this.marcasFiltro = this.marcas.slice(0);
-    console.log(this.marcasFiltro);
+  aplicaFiltro(value) {
+    this.marcasFiltro = this.marcas.filter(function (m) {
+      return m.name.toUpperCase().startsWith(value.toUpperCase());
+    })
+  }
+
+  sortMarcas() {
+    this.marcas.sort((left, right): number => {
+      if (left.name < right.name) {
+        return -1;
+      } if (left.name > right.name) {
+        return 1;
+      }
+      return 0;
+    })
+    this.marcasFiltro = this.marcas;
   }
 }
