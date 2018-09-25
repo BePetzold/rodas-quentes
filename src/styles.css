@@ -2,10 +2,31 @@
 
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "~font-awesome/css/font-awesome.min.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
 body {
     background-image: url("http://papers.co/wallpaper/papers.co-mh75-aspalt-hd-skid-marks-nature-pattern-36-3840x2400-4k-wallpaper.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+
+
+
+body { 
+  font-family: Roboto, Arial, sans-serif;
+  margin: 0;
+}
+
+.basic-container {
+  padding: 30px;
+}
+
+.version-info {
+  font-size: 8pt;
+  float: right;
 }

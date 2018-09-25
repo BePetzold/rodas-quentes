@@ -11,6 +11,9 @@ import { OrderModule } from 'ngx-order-pipe';
 import { HttpModule } from '@angular/http';
 import { AppRoutingModule } from './app-routing.module';
 import { DataService } from './data.service';
+import { VeiculosComponent } from './veiculos/veiculos.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogRef, MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,7 @@ import { DataService } from './data.service';
     CompraComponent,
     VendaComponent,
     NavbarComponent,
-
+    VeiculosComponent
   ],
   imports: [
     BrowserModule,
@@ -26,9 +29,16 @@ import { DataService } from './data.service';
     HttpModule,
     OrderModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatDialogModule
+    ],
+  providers: [
+    DataService,
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: true}},
+    {provide: MatDialogRef, useValue: {hasBackdrop: false}}
   ],
-  providers: [DataService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [VeiculosComponent]
 })
 export class AppModule { }
