@@ -1,3 +1,6 @@
+<div class="fechar" mat-dialog-actions>
+  <button mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
+</div>
 <h1 mat-dialog-title>CARROS</h1>
 <div mat-dialog-content>
   <div *ngFor="let veiculo of veiculos" style="text-align: center">
@@ -5,6 +8,3 @@
   </div>
 </div>
 <br>
-<div class="fechar" mat-dialog-actions>
-  <button mat-button (click)="closeDialog()" class="btn btn-outline-light">FECHAR</button>
-</div>
