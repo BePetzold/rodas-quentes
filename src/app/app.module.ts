@@ -14,6 +14,8 @@ import { DataService } from './data.service';
 import { VeiculosComponent } from './veiculos/veiculos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogRef, MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
+import { AutomovelComponent } from './automovel/automovel.component';
+import { DetalhesComponent } from './detalhes/detalhes.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { MatDialogRef, MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angu
     CompraComponent,
     VendaComponent,
     NavbarComponent,
-    VeiculosComponent
+    VeiculosComponent,
+    AutomovelComponent,
+    DetalhesComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,6 @@ import { MatDialogRef, MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angu
     {provide: MatDialogRef, useValue: {hasBackdrop: false}}
   ],
   bootstrap: [AppComponent],
-  entryComponents: [VeiculosComponent]
+  entryComponents: [VeiculosComponent, AutomovelComponent, DetalhesComponent]
 })
 export class AppModule { }

@@ -8,7 +8,9 @@ import { CarrosServiceService } from './carros-service.service';
 export class DataService {
 
   carregar = [];
-  veiculos:any = []
+  veiculos:any = [];
+  automovel = [];
+  detalhe = [];
 
   constructor(private api: CarrosServiceService) {
     this.preenArr();
@@ -56,4 +58,36 @@ export class DataService {
   getVeiculos(){
     return this.veiculos;
   }
+
+  setAutomovel(id) {
+    if(id == 0) {
+        this.automovel = [{name:'Não há veiculos cadatrados'}];
+    }else{
+      this.api.getAutoId(id).subscribe(res =>{
+        this.automovel = res;
+      });
+    }
+  }
+
+  getAutomovel(){
+    return this.automovel;
+  }
+
+  setDetalhes(id) {
+    if(id == 0) {
+        this.detalhe = [{name:'Não há veiculos cadatrados'}];
+    }else{
+      this.api.getDetalhes(id).subscribe(res =>{
+        this.detalhe = res;
+      });
+    }
+  }
+
+  getDetalhes(){
+    return this.detalhe;
+  }
+
+
+
+
 }

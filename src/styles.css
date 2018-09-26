@@ -38,3 +38,12 @@ body {
 	-ms-transform: translateX(-50%) translateY(-50%);
 	transform: translateX(-50%) translateY(-50%);
 }
+
+#popup{
+  text-align: center;
+  margin: 10px;
+}
+
+#cursor{
+   cursor: pointer;
+}

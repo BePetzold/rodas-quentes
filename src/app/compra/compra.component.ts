@@ -3,6 +3,7 @@ import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material';
 import { VeiculosComponent } from '../veiculos/veiculos.component';
 
+
 @Component({
   selector: 'app-compra',
   templateUrl: './compra.component.html',
@@ -71,5 +72,4 @@ export class CompraComponent implements OnInit {
     });
     dialogRef.updatePosition();
   }
-
 }
