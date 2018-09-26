@@ -1,11 +1,10 @@
-
-
-<h1 mat-dialog-title>Carros da marca {{marca.name}}</h1>
+<h1 mat-dialog-title>CARROS</h1>
 <div mat-dialog-content>
-  <div *ngFor="let carro of carros">
-    {{carro.name}}
+  <div *ngFor="let veiculo of veiculos" style="text-align: center">
+    {{veiculo.name}}
   </div>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="closeDialog()">Ok</button>
+<br>
+<div class="fechar" mat-dialog-actions>
+  <button mat-button (click)="closeDialog()" class="btn btn-outline-light">FECHAR</button>
 </div>

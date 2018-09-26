@@ -1,6 +1,7 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CarrosServiceService } from '../carros-service.service';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, DialogRole} from '@angular/material';
+import { MatDialogRef } from '@angular/material';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-veiculos',
@@ -9,23 +10,17 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA, DialogRole} from '@angular/mat
 })
 export class VeiculosComponent implements OnInit {
 
-  carros = [];
-  @Input() marca: any;
-  constructor(private api: CarrosServiceService, public dialogRef: MatDialogRef<VeiculosComponent>) { }
+  veiculos: any = [];
+  constructor(private api: CarrosServiceService, public dialogRef: MatDialogRef<VeiculosComponent>, private data: DataService) { }
 
   ngOnInit() {
-
-    // this.api.getVeiculosMarca(this.marca.id).subscribe(res => {
-    //   this.carros = res;
-    // })
-
-    this.api.getVeiculosMarca(this.marca).subscribe(res => {
-      this.carros = res;
-    })
+    setTimeout(() => {
+      this.veiculos = this.data.getVeiculos();
+    }, 300);
   }
 
   closeDialog() {
     this.dialogRef.close();
   }
-
+  
 }

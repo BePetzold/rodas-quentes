@@ -3,14 +3,16 @@
     flex-wrap: wrap;
   }
   
-  .flex-container > div {
+  .flex-container > div{
     background-color: rgba(30, 143, 255, 0.7);
     color: white;
     width: 390px;
     margin: 2%;
     text-align: center;
     line-height: 75px;
-    font-size: 30px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: 0.5s;
   }
 
   .flex-container button{
@@ -21,6 +23,26 @@
       font-size: 18px;
       border: none;
       float: left;
+      cursor: pointer;
+      transition: 0.5s;
+  }
+
+  .flex-container button:hover{
+    background-color: rgb(255, 36, 36);
+}
+
+  #pesquisar{
+    margin-top: 2%;
+    margin-left: 2%; 
+    width: 290px;
+  }
+
+  #comprar{
+    margin-top: 2%; 
+  }
+
+  .flex-container > div:hover {
+    background-color: rgba(0, 71, 224, 0.7);
   }
 
   .nav-item .nav-link disabled a{

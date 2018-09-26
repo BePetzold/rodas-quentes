@@ -1,19 +1,18 @@
 <div>
   <div>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" aria-label="Pesquisar" #filtro (keyup)="aplicaFiltro(filtro.value)">
-      <button class="btn btn-success my-2 my-sm-0" type="submit" >Pesquisar</button>
+      <input id="pesquisar" class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar" #filtro (keyup)="aplicaFiltro(filtro.value)">
     </form>
   </div>
   <br>
   <div>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" aria-label="Adicionar" #adicionar>
+      <input id="adicionar" class="form-control mr-sm-2" aria-label="Adicionar" #adicionar>
       <button class="btn btn-success my-2 my-sm-0" type="submit" (click)="addMarca(adicionar.value)">Vender</button>
 
     </form>
     <div class="flex-container">
       <div *ngFor="let marca of marcasFiltro">
-        {{marca.name}}
+        <div class="marca" (click)="mostraCarros(marca.id)">{{marca.name}}</div>
       </div>
     </div>

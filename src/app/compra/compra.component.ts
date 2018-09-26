@@ -1,7 +1,6 @@
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Component, OnInit, Inject } from '@angular/core';
-import { CarrosServiceService } from '../carros-service.service';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog } from '@angular/material';
 import { VeiculosComponent } from '../veiculos/veiculos.component';
 
 @Component({
@@ -18,11 +17,15 @@ export class CompraComponent implements OnInit {
   show: boolean = false;
   selected_marca: any = null;
 
-  constructor(private _data: DataService, public dialog: MatDialog) {}
+  wait = false; 
 
-  ngOnInit() {
-    this.carregarMarcas();
-    console.log(this.marcasFiltro);
+  constructor(private _data: DataService, public dialog: MatDialog) {
+  }
+
+  ngOnInit() { 
+    setTimeout(() => {
+      this.carregarMarcas();
+    }, 300);
   }
 
   carregarMarcas() {
@@ -61,8 +64,8 @@ export class CompraComponent implements OnInit {
     this.marcasFiltro = this.marcas;
   }
 
-  mostraCarros(marca){
-    this.selected_marca = marca;
+  mostraCarros(id_marca){
+    this._data.setVeiculos(id_marca);
     let dialogRef = this.dialog.open(VeiculosComponent, {
       width: '600px',
     });
