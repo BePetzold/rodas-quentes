@@ -4,8 +4,6 @@ import { CarrosServiceService } from '../carros-service.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import { VeiculosComponent } from '../veiculos/veiculos.component';
 
-
-
 @Component({
   selector: 'app-compra',
   templateUrl: './compra.component.html',
@@ -20,8 +18,7 @@ export class CompraComponent implements OnInit {
   show: boolean = false;
   selected_marca: any = null;
 
-  constructor(private _data: DataService, public dialog: MatDialog) {
-  }
+  constructor(private _data: DataService, public dialog: MatDialog) {}
 
   ngOnInit() {
     this.carregarMarcas();
