@@ -16,6 +16,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogRef, MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material';
 import { AutomovelComponent } from './automovel/automovel.component';
 import { DetalhesComponent } from './detalhes/detalhes.component';
+import { MotosComponent } from './motos/motos.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DetalhesComponent } from './detalhes/detalhes.component';
     NavbarComponent,
     VeiculosComponent,
     AutomovelComponent,
-    DetalhesComponent
+    DetalhesComponent,
+    MotosComponent
   ],
   imports: [
     BrowserModule,

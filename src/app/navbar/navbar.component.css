@@ -1,7 +1,25 @@
-.nav {
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    top: 0;
-    z-index: 99;
-    }
+.text-nowrap {
+    white-space: nowrap !important;
+    display: inline-block;
+}
+
+li{
+    margin-left: 15%;
+    white-space: nowrap !important;
+    display: inline-block;
+}
+ul{
+    white-space: nowrap !important;
+    display: inline-block;
+}
+.li1{
+    font-size: 20px;
+    cursor: default;
+    white-space: nowrap !important;
+    display: inline-block;
+}
+.li2{
+    margin-left: 36%;
+    white-space: nowrap !important;
+    display: inline-block;
+}
