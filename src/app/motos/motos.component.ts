@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material';
-import { VeiculosComponent } from '../veiculos/veiculos.component';
+import { DataMotosService } from '../data-motos.service';
+import { MotosDialogComponent } from '../motos-dialog/motos-dialog.component';
 
 @Component({
   selector: 'app-motos',
@@ -14,7 +15,7 @@ export class MotosComponent implements OnInit {
   marcas = [];
   marcasFiltro = [];
 
-  constructor(private _data: DataService, public dialog: MatDialog) {}
+  constructor(private _data: DataMotosService, public dialog: MatDialog) {}
 
   ngOnInit() {
     setTimeout(() => {
@@ -59,8 +60,8 @@ export class MotosComponent implements OnInit {
   }
 
   mostraMotos(id_marca){
-    this._data.setVeiculos(id_marca);
-    let dialogRef = this.dialog.open(MotosComponent, {
+    this._data.setMoto(id_marca);
+    let dialogRef = this.dialog.open(MotosDialogComponent, {
       width: '600px',
     });
     dialogRef.updatePosition();

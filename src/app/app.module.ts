@@ -17,6 +17,7 @@ import { MatDialogRef, MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angu
 import { AutomovelComponent } from './automovel/automovel.component';
 import { DetalhesComponent } from './detalhes/detalhes.component';
 import { MotosComponent } from './motos/motos.component';
+import { MotosDialogComponent } from './motos-dialog/motos-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MotosComponent } from './motos/motos.component';
     VeiculosComponent,
     AutomovelComponent,
     DetalhesComponent,
-    MotosComponent
+    MotosComponent,
+    MotosDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -45,6 +47,6 @@ import { MotosComponent } from './motos/motos.component';
     {provide: MatDialogRef, useValue: {hasBackdrop: false}}
   ],
   bootstrap: [AppComponent],
-  entryComponents: [VeiculosComponent, AutomovelComponent, DetalhesComponent]
+  entryComponents: [VeiculosComponent, AutomovelComponent, DetalhesComponent, MotosDialogComponent]
 })
 export class AppModule { }
