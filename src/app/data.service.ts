@@ -47,7 +47,7 @@ export class DataService {
 
   setVeiculos(marca) {
     if(marca == 0) {
-        this.veiculos = [{name:'Não há veiculos cadatrados'}];
+        this.veiculos = [{name:'Não há veiculos cadatrados', id: 0}] ;
     }else{
       this.api.getVeiculosMarca(marca).subscribe(res =>{
         this.veiculos = res;

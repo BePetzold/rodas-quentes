@@ -1,6 +1,7 @@
 h1{
     color: white;
     text-align: center;
+    margin-top: 6%;
 }
 
 div{
@@ -8,6 +9,14 @@ div{
     color: white;
 }
 
-.fechar{
-    margin-left: 90%
+#botao{
+    margin-left: 2%;
+    margin-bottom: 2%;
+    float: right;
 }
+
+#pesquisar{
+    width: 90%;
+}
+
+

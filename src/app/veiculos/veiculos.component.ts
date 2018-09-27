@@ -13,11 +13,13 @@ import { AutomovelComponent } from '../automovel/automovel.component';
 export class VeiculosComponent implements OnInit {
 
   veiculos: any = [];
+  veiculosFiltro = [];
   constructor(private api: CarrosServiceService, public dialogRef: MatDialogRef<VeiculosComponent>, private _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {
     setTimeout(() => {
       this.veiculos = this._data.getVeiculos();
+      this.veiculosFiltro = this.veiculos;
     }, 500);
   }
 
@@ -26,11 +28,20 @@ export class VeiculosComponent implements OnInit {
   }
 
   mostraAutomovel(id_auto){
+    if(id_auto != 0){
     this._data.setAutomovel(id_auto);
     let dialogRef = this.dialog.open(AutomovelComponent, {
       width: '600px',
     });
     dialogRef.updatePosition();
   }
+}
 
+  aplicaFiltro(value) {
+    this.veiculosFiltro = [];
+    this.veiculosFiltro = this.veiculos.filter(function (m) {
+      return m.name.toUpperCase().startsWith(value.toUpperCase());
+    })
+
+  }
 }

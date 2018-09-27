@@ -1,9 +1,11 @@
-<div class="fechar" mat-dialog-actions>
-  <button mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
+<div mat-dialog-actions>
+    <input id="pesquisar" class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar" #filtro (keyup)="aplicaFiltro(filtro.value)"> 
+    <button id="botao" mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
 </div>
+
 <h1 mat-dialog-title>CARROS</h1>
 <div mat-dialog-content>
-  <div id="popup" *ngFor="let veiculo of veiculos">
+  <div id="popup" *ngFor="let veiculo of veiculosFiltro">
     <a id="cursor" (click)="mostraAutomovel(veiculo.id)">{{veiculo.name}}</a>
     
   </div>
