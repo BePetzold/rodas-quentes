@@ -23,7 +23,7 @@ export class CaminhaoComponent implements OnInit {
     setTimeout(() => {
       this.caminhoes = this._data.getCaminhao();
       this.caminhoesFiltro = this.caminhoes;
-    }, 550);
+    }, 500);
   }
 
   closeDialog() {

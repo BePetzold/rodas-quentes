@@ -4,12 +4,6 @@
 @import "~font-awesome/css/font-awesome.min.css";
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 
-body {
-    background-image: url("http://papers.co/wallpaper/papers.co-mh75-aspalt-hd-skid-marks-nature-pattern-36-3840x2400-4k-wallpaper.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
@@ -46,4 +40,12 @@ body {
 
 #cursor{
    cursor: pointer;
+}
+
+
+body {
+  background-image: url("http://papers.co/wallpaper/papers.co-mh75-aspalt-hd-skid-marks-nature-pattern-36-3840x2400-4k-wallpaper.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
 }

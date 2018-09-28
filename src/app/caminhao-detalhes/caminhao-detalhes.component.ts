@@ -16,7 +16,7 @@ export class CaminhaoDetalhesComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.detalhe = this._data.getDetalhes();
-    }, 700);
+    }, 600);
   }
   
   closeDialog() {
