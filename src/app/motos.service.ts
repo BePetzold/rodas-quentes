@@ -26,7 +26,7 @@ export class MotosService {
   }
 
   getMotoId(id_marca: string): Observable<any>{
-    let url_query = 'http://fipeapi.appspot.com/api/1/motos/veiculos/'  + id_marca + '.json';
+    let url_query = 'http://fipeapi.appspot.com/api/1/motos/veiculos/' + id_marca + '.json';
     this.id_marca = id_marca;
      return this.http.get(url_query).pipe(map((res: Response) => res.json()));
   }

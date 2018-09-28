@@ -23,6 +23,7 @@ import { CaminhoesComponent } from './caminhoes/caminhoes.component';
 import { CaminhaoComponent } from './caminhao/caminhao.component';
 import { CamComponent } from './cam/cam.component';
 import { CaminhaoDetalhesComponent } from './caminhao-detalhes/caminhao-detalhes.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CaminhaoDetalhesComponent } from './caminhao-detalhes/caminhao-detalhes
     CaminhoesComponent,
     CaminhaoComponent,
     CamComponent,
-    CaminhaoDetalhesComponent
+    CaminhaoDetalhesComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
