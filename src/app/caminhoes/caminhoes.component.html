@@ -1,0 +1,14 @@
+<div>
+  <form class="form-inline my-2 my-lg-0">
+      <input id="pesquisar" class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar" #filtro (keyup)="aplicaFiltro(filtro.value)">
+    </form>
+</div>
+
+<div class="flex-container">
+<div *ngFor="let marca of marcasFiltro">
+  <div>
+    <button *ngIf="show" (click)="deleteMarca(marca.name)">Comprar</button>
+  </div>
+  <div (click)="mostraCaminhoes(marca.id)">{{marca.name}}</div>
+</div>
+</div>

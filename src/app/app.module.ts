@@ -19,6 +19,10 @@ import { MotosComponent } from './motos/motos.component';
 import { MotosDialogComponent } from './motos-dialog/motos-dialog.component';
 import { MotoComponent } from './moto/moto.component';
 import { MotoDetalhesComponent } from './moto-detalhes/moto-detalhes.component';
+import { CaminhoesComponent } from './caminhoes/caminhoes.component';
+import { CaminhaoComponent } from './caminhao/caminhao.component';
+import { CamComponent } from './cam/cam.component';
+import { CaminhaoDetalhesComponent } from './caminhao-detalhes/caminhao-detalhes.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,11 @@ import { MotoDetalhesComponent } from './moto-detalhes/moto-detalhes.component';
     MotosComponent,
     MotosDialogComponent,
     MotoComponent,
-    MotoDetalhesComponent
+    MotoDetalhesComponent,
+    CaminhoesComponent,
+    CaminhaoComponent,
+    CamComponent,
+    CaminhaoDetalhesComponent
   ],
   imports: [
     BrowserModule,
@@ -50,6 +58,6 @@ import { MotoDetalhesComponent } from './moto-detalhes/moto-detalhes.component';
     {provide: MatDialogRef, useValue: {hasBackdrop: false}}
   ],
   bootstrap: [AppComponent],
-  entryComponents: [VeiculosComponent, AutomovelComponent, DetalhesComponent, MotosDialogComponent, MotosComponent, MotoComponent,MotoDetalhesComponent]
+  entryComponents: [VeiculosComponent, AutomovelComponent, DetalhesComponent, MotosDialogComponent, MotosComponent, MotoComponent,MotoDetalhesComponent, CaminhaoComponent, CaminhoesComponent, CamComponent, CaminhaoDetalhesComponent]
 })
 export class AppModule { }
