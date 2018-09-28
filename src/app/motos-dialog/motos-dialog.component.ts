@@ -3,7 +3,7 @@ import { CarrosServiceService } from '../carros-service.service';
 import { MatDialogRef } from '@angular/material';
 import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material';
-import { MotosComponent } from '../motos/motos.component';
+import { MotoComponent } from '../moto/moto.component';
 import { MotosService } from '../motos.service';
 import { DataMotosService } from '../data-motos.service';
 
@@ -31,8 +31,8 @@ export class MotosDialogComponent implements OnInit {
 
   mostraMotos(id_moto){
     if(id_moto != 0){
-    this._data.setMoto(id_moto);
-    let dialogRef = this.dialog.open(MotosDialogComponent, {
+    this._data.setMotos(id_moto);
+    let dialogRef = this.dialog.open(MotoComponent, {
       width: '600px',
     });
     dialogRef.updatePosition();

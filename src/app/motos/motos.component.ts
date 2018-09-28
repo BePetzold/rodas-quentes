@@ -3,6 +3,7 @@ import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material';
 import { DataMotosService } from '../data-motos.service';
 import { MotosDialogComponent } from '../motos-dialog/motos-dialog.component';
+import { MotoComponent } from '../moto/moto.component';
 
 @Component({
   selector: 'app-motos',

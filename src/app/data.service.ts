@@ -10,7 +10,7 @@ export class DataService {
   carregar = [];
   veiculos:any = [];
   automovel = [];
-  detalhe = [];
+  detalhe;
 
   constructor(private api: CarrosServiceService) {
     this.preenArr();

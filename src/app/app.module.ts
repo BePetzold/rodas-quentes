@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
@@ -18,6 +17,8 @@ import { AutomovelComponent } from './automovel/automovel.component';
 import { DetalhesComponent } from './detalhes/detalhes.component';
 import { MotosComponent } from './motos/motos.component';
 import { MotosDialogComponent } from './motos-dialog/motos-dialog.component';
+import { MotoComponent } from './moto/moto.component';
+import { MotoDetalhesComponent } from './moto-detalhes/moto-detalhes.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,9 @@ import { MotosDialogComponent } from './motos-dialog/motos-dialog.component';
     AutomovelComponent,
     DetalhesComponent,
     MotosComponent,
-    MotosDialogComponent
+    MotosDialogComponent,
+    MotoComponent,
+    MotoDetalhesComponent
   ],
   imports: [
     BrowserModule,
@@ -47,6 +50,6 @@ import { MotosDialogComponent } from './motos-dialog/motos-dialog.component';
     {provide: MatDialogRef, useValue: {hasBackdrop: false}}
   ],
   bootstrap: [AppComponent],
-  entryComponents: [VeiculosComponent, AutomovelComponent, DetalhesComponent, MotosDialogComponent]
+  entryComponents: [VeiculosComponent, AutomovelComponent, DetalhesComponent, MotosDialogComponent, MotosComponent, MotoComponent,MotoDetalhesComponent]
 })
 export class AppModule { }

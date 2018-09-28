@@ -8,9 +8,9 @@ import { MotosService } from './motos.service';
 export class DataMotosService {
 
   carregar = [];
-  motos:any = [];
+  motos = [];
   moto = [];
-  // detalhe = [];
+  detalhe;
 
   constructor(private api: MotosService) {
     this.preenArr();
@@ -49,7 +49,7 @@ export class DataMotosService {
     if(marca == 0) {
         this.motos = [{name:'Não há motos cadatradas', id: 0}] ;
     }else{
-      this.api.getMotos(marca).subscribe(res =>{
+      this.api.getMotoneta(marca).subscribe(res =>{
         this.motos = res;
       });
     }
@@ -74,19 +74,19 @@ export class DataMotosService {
      return this.moto;
    }
 
-  // setDetalhes(id) {
-  //   if(id == 0) {
-  //       this.detalhe = [{name:'Não há veiculos cadatrados'}];
-  //   }else{
-  //     this.api.getDetalhes(id).subscribe(res =>{
-  //       this.detalhe = res;
-  //     });
-  //   }
-  // }
+  setDetalhes(id) {
+    if(id == 0) {
+        this.detalhe = [{name:'Não há veiculos cadatrados'}];
+    }else{
+      this.api.getMotoDetalhes(id).subscribe(res =>{
+        this.detalhe = res;
+      });
+    }
+  }
 
-  // getDetalhes(){
-  //   return this.detalhe;
-  // }
+  getDetalhes(){
+    return this.detalhe;
+  }
 
 
 

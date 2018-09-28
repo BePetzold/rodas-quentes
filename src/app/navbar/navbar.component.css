@@ -1,25 +1,25 @@
 .text-nowrap {
     white-space: nowrap !important;
     display: inline-block;
-}
-
-li{
+ }
+ 
+ li{
     margin-left: 15%;
     white-space: nowrap !important;
     display: inline-block;
-}
-ul{
+ }
+ ul{
     white-space: nowrap !important;
     display: inline-block;
-}
-.li1{
+ }
+ .li1{
     font-size: 20px;
     cursor: default;
     white-space: nowrap !important;
     display: inline-block;
-}
-.li2{
+ }
+ .li2{
     margin-left: 36%;
     white-space: nowrap !important;
     display: inline-block;
-}
+ }
