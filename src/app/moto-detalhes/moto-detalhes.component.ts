@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material';
 })
 export class MotoDetalhesComponent implements OnInit {
 
-  detalhe=[];
+  detalhe;
   constructor(private api: MotosService, public dialogRef: MatDialogRef<MotoDetalhesComponent>, private _data: DataMotosService, public dialog: MatDialog) { }
   ngOnInit() {
     setTimeout(() => {

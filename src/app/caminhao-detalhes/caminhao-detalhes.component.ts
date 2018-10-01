@@ -11,7 +11,7 @@ import { MatDialog } from '@angular/material';
 })
 export class CaminhaoDetalhesComponent implements OnInit {
 
-  detalhe=[]
+  detalhe;
   constructor(private api: CaminhoesService, public dialogRef: MatDialogRef<CaminhaoDetalhesComponent>, private _data: DataCaminhoesService, public dialog: MatDialog) { }
   ngOnInit() {
     setTimeout(() => {

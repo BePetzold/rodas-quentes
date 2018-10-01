@@ -32,14 +32,17 @@
 
 .corpo-carros{
   background-color: #f8f9fa;
+  cursor: pointer;
 }
 
 .corpo-motos{
   background-color: #f8f9fa;
+  cursor: pointer;
 }
 
 .corpo-caminhoes{
   background-color: #f8f9fa;
+  cursor: pointer;
 }
 
 .corpo-carros:hover{
