@@ -1,6 +1,7 @@
 .flex-container {
     display: flex;
     flex-wrap: wrap;
+    margin-top: 5%;
   }
   
   .flex-container > div{
@@ -11,13 +12,16 @@
     text-align: center;
     line-height: 75px;
     font-size: 22px;
-    cursor: pointer;
     transition: 0.5s;
     margin-left: 25.1%;
   }
 
+  .flex-container > div.corpo{
+   cursor: pointer;
+  }
 
-   .flex-container > div:hover {
+
+   .flex-container > div.corpo:hover {
     background-color: rgba(30, 143, 255, 0.7);
   }
 
@@ -33,4 +37,8 @@
     color: rgba(0,0,0,.5);
     background-color: #f8f9fa;
     font-size: 24px;
+}
+
+.caixa-topo{
+  line-height: 170% !important;
 }

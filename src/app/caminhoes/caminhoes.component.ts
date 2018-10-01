@@ -25,7 +25,7 @@ export class CaminhoesComponent implements OnInit {
   ngOnInit() { 
     setTimeout(() => {
       this.carregarMarcas();
-    }, 300);
+    }, 400);
   }
 
   carregarMarcas() {

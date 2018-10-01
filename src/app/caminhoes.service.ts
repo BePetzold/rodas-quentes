@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 export class CaminhoesService {
 
-  url = 'http://fipeapi.appspot.com/api/1/caminhoes/marcas.json';
+  url = 'https://fipeapi.appspot.com/api/1/caminhoes/marcas.json';
   private id_marca: string;
   private id_caminhao: string;
 
@@ -20,7 +20,7 @@ export class CaminhoesService {
 
   getCaminhaoId(id_marca: string): Observable<any>{
     this.id_marca = id_marca;
-    let url_query = 'http://fipeapi.appspot.com/api/1/caminhoes/veiculos/'  + id_marca + '.json';
+    let url_query = 'https://fipeapi.appspot.com/api/1/caminhoes/veiculos/'  + id_marca + '.json';
     
      return this.http.get(url_query).pipe(map((res: Response) => res.json()));
   }
@@ -28,16 +28,13 @@ export class CaminhoesService {
   
   getCaminhoes(id_caminhao: string): Observable<any>{
      this.id_caminhao = id_caminhao;
-    let url_query = 'http://fipeapi.appspot.com/api/1/caminhoes/veiculo/' + this.id_marca + '/' + id_caminhao + '.json';
-   
+    let url_query = 'https://fipeapi.appspot.com/api/1/caminhoes/veiculo/' + this.id_marca + '/' + id_caminhao + '.json';
    return this.http.get(url_query).pipe(map((res: Response) => res.json()));
   }
 
-  
 
   getCaminhaoDetalhes(id_modelo: string): Observable<any>{
-    let url_query = 'http://fipeapi.appspot.com/api/1/caminhoes/veiculo/' + this.id_marca + '/' + this.id_caminhao + '/' + id_modelo + '.json';
-    console.log(this.id_marca, this.id_caminhao, id_modelo);
+    let url_query = 'https://fipeapi.appspot.com/api/1/caminhoes/veiculo/' + this.id_marca + '/' + this.id_caminhao + '/' + id_modelo + '.json';
     return this.http.get(url_query).pipe(map((res: Response) => res.json()));
     
   }
