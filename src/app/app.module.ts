@@ -24,6 +24,7 @@ import { CaminhaoComponent } from './caminhao/caminhao.component';
 import { CamComponent } from './cam/cam.component';
 import { CaminhaoDetalhesComponent } from './caminhao-detalhes/caminhao-detalhes.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     CaminhaoComponent,
     CamComponent,
     CaminhaoDetalhesComponent,
-    HomepageComponent
+    HomepageComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
