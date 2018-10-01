@@ -1,3 +1,4 @@
+<div class="body">
 <div>
   <form class="form-inline my-2 my-lg-0">
       <input id="pesquisar" class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar" #filtro (keyup)="aplicaFiltro(filtro.value)">
@@ -10,6 +11,7 @@
     <button *ngIf="show" (click)="deleteMarca(marca.name)">Comprar</button>
   </div>
   <div (click)="mostraCaminhoes(marca.id)">{{marca.name}}</div>
+</div>
 </div>
 </div>
 <app-footer></app-footer>

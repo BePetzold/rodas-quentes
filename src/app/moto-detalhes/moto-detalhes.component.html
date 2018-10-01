@@ -1,3 +1,4 @@
+
 <div class="fechar" mat-dialog-actions>
   <button mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
 </div>
@@ -5,11 +6,14 @@
 <div class="flex-container" id="popup">
 
   <div><span>MARCA: </span><br>{{detalhe.marca}} </div>
-   <div><span>MODELO: </span><br>{{detalhe.veiculo}} </div>
-   <div><span>PREÇO: </span><br>{{detalhe.preco}} </div>
-   <div><span>ANO: </span><br>{{detalhe.ano_modelo}} </div>
-   <div><span>COMBUSTÍVEL: </span><br>{{detalhe.combustivel}} </div>
-
+  <div *ngIf="detalhe.veiculo"><span>MODELO: </span><br>{{detalhe.veiculo}} </div>
+  <div *ngIf="detalhe.veiculo==null"><span>MODELO: </span><br>{{detalhe.name}} </div>
+  <div><span>PREÇO: </span><br>{{detalhe.preco}} </div>
+  <div *ngIf="detalhe.ano_modelo!=32000"><span>ANO: </span><br>{{detalhe.ano_modelo}} </div>
+  <div *ngIf="detalhe.ano_modelo==32000"><span>ANO: </span><br> Zero KM </div>
+  <div><span>COMBUSTÍVEL: </span><br>{{detalhe.combustivel}} </div>
 
  
   </div>
+  
+  

@@ -31,7 +31,9 @@ export class CarrosServiceService {
 
   getDetalhes(id_automovel: string): Observable<any>{
     let url_query = 'https://fipeapi.appspot.com/api/1/carros/veiculo/' + this.id_marca + '/' + this.id_veiculo + '/' + id_automovel + '.json';
+    console.log(url_query);
     return this.http.get(url_query).pipe(map((res: Response) => res.json()));
+    
   }
 
 
