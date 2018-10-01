@@ -4,41 +4,52 @@
     margin-top: 5%;
     margin-left: 25.1%;
   }
-  
-  .flex-container > div{
-    background-color: #f8f9fa;
-    color: rgba(0,0,0,.5);
-    width: 60%;
-    margin: 2%;
-    text-align: center;
-    line-height: 75px;
-    font-size: 22px;
-    transition: 0.5s;
-  }
 
-  .flex-container > div.corpo{
-   cursor: pointer;
-  }
-
-   .flex-container > div.corpo:hover {
-    background-color: rgba(30, 143, 255, 0.7);
-  }
-
-  .nav-item .nav-link disabled a{
-    color: white;
+.flex-container > div{
+  color: rgba(0,0,0,.5);
+  width: 60%;
+  margin: 2%;
+  text-align: center;
+  line-height: 75px;
+  font-size: 22px;
+  transition: 0.5s;
 }
 
-#doidera{
-    margin-top: 9%!important; 
-    width: 950px!important; 
-    margin-left: 25%!important; 
-    text-align: center!important;
-    color: rgba(0,0,0,.5);
-    background-color: #f8f9fa;
-    font-size: 24px;
+.flex-container > div.corpo{
+  cursor: pointer;
+}
+
+.nav-item .nav-link disabled a{
+  color: white;
 }
 
 .caixa-topo{
   line-height: 170% !important;
   padding: 2%;
+  border-radius: 10px;
+  background-color: #f8f9fa;
+}
+
+.corpo-carros{
+  background-color: #f8f9fa;
+}
+
+.corpo-motos{
+  background-color: #f8f9fa;
+}
+
+.corpo-caminhoes{
+  background-color: #f8f9fa;
+}
+
+.corpo-carros:hover{
+  background-color: rgba(30, 143, 255);
+}
+
+.corpo-motos:hover{
+  background-color: rgba(23, 231, 16);
+}
+
+.corpo-caminhoes:hover{
+  background-color: rgb(255, 186, 57);
 }
