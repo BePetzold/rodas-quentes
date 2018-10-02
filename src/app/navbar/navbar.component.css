@@ -53,10 +53,17 @@ a:hover{
     text-decoration: none;
     display: block;
     text-align: left;
+    transition: 0.5s;
 }
 
-.dropdown-content a:hover {
-    background-color: #dfdfdf;
+.dropdown-content a.a1:hover {
+    background-color: rgba(0, 71, 224, 0.7);
+}
+.dropdown-content a.a2:hover {
+    background-color: rgba(23, 231, 16, 0.74);
+}
+.dropdown-content a.a3:hover {
+    background-color: rgba( 255, 186, 57);
 }
 
 .dropdown:hover .dropdown-content {
