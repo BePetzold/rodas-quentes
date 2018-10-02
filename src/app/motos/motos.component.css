@@ -83,7 +83,7 @@ to   { opacity: 1; }
   .nav-item .nav-link disabled a{
     color: white;
 }
+
 .body{
-  min-height: 83%;
-  max-height: 375%;
+  min-height: 81%;
 }
