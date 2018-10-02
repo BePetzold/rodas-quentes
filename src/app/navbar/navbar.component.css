@@ -1,7 +1,21 @@
 .logo{
     width: 15%;
     margin-right: 2%;
-    font-size: 25px;
+    margin-left: 1%;
+    font-size: 30px;
+}
+
+img{
+    width: 60px;
+    float: right;
+    margin-right: 3%;
+    
+}
+
+img:hover{
+    background-color: #dfdfdf;
+    padding: 2px 2px;
+    border-radius: 8px;
 }
 
 a{
@@ -16,29 +30,35 @@ a:hover{
     text-decoration: none;
 }
 
-.menu{
-    width: 75%;
-    list-style-type: none;
-    margin: 0;
-    overflow: hidden;
-    text-align: center;
+.dropdown {
+    display: inline-block;
+    margin-right: 3.3%;
 }
 
-li{
-    float: left;
-    margin: 1%;
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f8f9fa;
+    min-width: 160px;
+    box-shadow: 0px 16px 16px 0px rgba(0,0,0,0.5 );
+    z-index: 1;
+    padding: 2%;
+    margin-top: 60px;
+    right: 0;
 }
 
-.li{
-    padding: 10px 15px;
-    border-radius: 15px; 
-    cursor: pointer;
-    background-color: rgb(231, 231, 231);
-    color: rgb(66, 66, 66);
-    transition: 800ms;
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
 }
 
-.li:hover{
-    color: rgb(231, 231, 231);
-    background-color: rgb(66, 66, 66);
+.dropdown-content a:hover {
+    background-color: #dfdfdf;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
