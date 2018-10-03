@@ -39,7 +39,7 @@
   }
     
 .flex-container > div{
-    background-color: rgb(255, 186, 57, 1);
+    background-color: rgb(255, 186, 57, 0.95);
     color: white;
     width: 390px;
     margin: 2%;
