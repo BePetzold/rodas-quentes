@@ -197,7 +197,7 @@ export class DataService {
       });
     }
   }
-  getCaminhaoDetalhes() {
+  getDetalhesCam() {
     return this.detalhe_caminhoes;
   }
 }

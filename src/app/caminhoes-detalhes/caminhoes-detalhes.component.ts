@@ -15,7 +15,7 @@ export class CaminhoesDetalhesComponent implements OnInit {
   constructor(private api: UrlService, public dialogRef: MatDialogRef<CaminhoesDetalhesComponent>, private _data: DataService, public dialog: MatDialog) { }
   ngOnInit() {
     setTimeout(() => {
-      this.detalhe = this._data.getDetalhesCar();
+      this.detalhe = this._data.getDetalhesCam();
     }, 600);
   }
   
