@@ -19,7 +19,7 @@ export class MotosMarcasComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.carregarMarcas();
-    }, 400);
+    }, 500);
   }
 
   carregarMarcas() {
