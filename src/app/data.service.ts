@@ -54,9 +54,6 @@ export class DataService {
       this.sortMarcasCam();
     })
   }
-  // changeMarca(marca) {
-  //   this.carregar = marca;
-  // }
 
   //METODOS PARA CARROS
   sortMarcasCar() {
