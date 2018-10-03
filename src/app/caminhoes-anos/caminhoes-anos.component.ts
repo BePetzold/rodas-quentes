@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { DataCaminhoesService } from '../data-caminhoes.service';
+import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material';
-import { CaminhoesService } from '../caminhoes.service';
+import { UrlService } from '../url.service';
 import { MatDialogRef } from '@angular/material';
 import { CaminhoesDetalhesComponent } from '../caminhoes-detalhes/caminhoes-detalhes.component';
 
@@ -16,7 +16,7 @@ export class CaminhoesAnosComponent implements OnInit {
   txtFiltro: string = "";
   caminhao: any = [];
   caminhaoFiltro = [];
-  constructor(private api: CaminhoesService, public dialogRef: MatDialogRef<CaminhoesAnosComponent>, private _data: DataCaminhoesService, public dialog: MatDialog) { }
+  constructor(private api: UrlService, public dialogRef: MatDialogRef<CaminhoesAnosComponent>, private _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {
     setTimeout(() => {
@@ -30,7 +30,7 @@ export class CaminhoesAnosComponent implements OnInit {
   }
 
   mostraDetalhes(id) {
-    this._data.setDetalhes(id);
+    this._data.setDetalhesCam(id);
     let dialogRef = this.dialog.open(CaminhoesDetalhesComponent, {
       width: '600px',
     });

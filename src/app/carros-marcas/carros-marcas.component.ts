@@ -28,8 +28,8 @@ export class CarrosMarcasComponent implements OnInit {
   }
 
   carregarMarcas() {
-    this.marcasFiltro = this._data.carregar;
-    this.marcas = this._data.carregar;
+    this.marcasFiltro = this._data.carregar_carros;
+    this.marcas = this._data.carregar_carros;
   }
 
   aplicaFiltro(value) {

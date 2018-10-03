@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarrosServiceService } from '../carros-service.service';
+import { UrlService } from '../url.service';
 import { MatDialogRef } from '@angular/material';
 import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material';
@@ -14,10 +14,10 @@ export class CarrosDetalhesComponent implements OnInit {
 
   detalhe;
 
-  constructor(private api: CarrosServiceService, public dialogRef: MatDialogRef<CarrosDetalhesComponent>, private _data: DataService, public dialog: MatDialog) { }
+  constructor(private api: UrlService, public dialogRef: MatDialogRef<CarrosDetalhesComponent>, private _data: DataService, public dialog: MatDialog) { }
   ngOnInit() {
     setTimeout(() => {
-      this.detalhe = this._data.getDetalhes();
+      this.detalhe = this._data.getDetalhesCar();
     }, 500);
   }
 

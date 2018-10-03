@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material';
-import { DataMotosService } from '../data-motos.service';
+import { DataService } from '../data.service';
 import { MotosModelosComponent } from '../motos-modelos/motos-modelos.component';
 
 @Component({
@@ -15,7 +14,7 @@ export class MotosMarcasComponent implements OnInit {
   marcas = [];
   marcasFiltro = [];
 
-  constructor(private _data: DataMotosService, public dialog: MatDialog) { }
+  constructor(private _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {
     setTimeout(() => {
@@ -24,8 +23,8 @@ export class MotosMarcasComponent implements OnInit {
   }
 
   carregarMarcas() {
-    this.marcasFiltro = this._data.carregar;
-    this.marcas = this._data.carregar;
+    this.marcasFiltro = this._data.carregar_motos;
+    this.marcas = this._data.carregar_motos;
   }
 
   aplicaFiltro(value) {

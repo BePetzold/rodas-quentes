@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CarrosServiceService } from '../carros-service.service';
+import { UrlService } from '../url.service';
 import { MatDialogRef } from '@angular/material';
 import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material';
@@ -15,7 +15,7 @@ export class CarrosModelosComponent implements OnInit {
 
   veiculos: any = [];
   veiculosFiltro = [];
-  constructor(private api: CarrosServiceService, public dialogRef: MatDialogRef<CarrosModelosComponent>, private _data: DataService, public dialog: MatDialog) { }
+  constructor(private api: UrlService, public dialogRef: MatDialogRef<CarrosModelosComponent>, private _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {
     setTimeout(() => {

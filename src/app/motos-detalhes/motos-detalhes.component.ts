@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MotosService } from '../motos.service';
 import { MatDialogRef } from '@angular/material';
-import { DataMotosService } from '../data-motos.service';
 import { MatDialog } from '@angular/material';
+import { UrlService } from '../url.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-motos-detalhes',
@@ -14,10 +14,10 @@ export class MotosDetalhesComponent implements OnInit {
 
   detalhe;
 
-  constructor(private api: MotosService, public dialogRef: MatDialogRef<MotosDetalhesComponent>, private _data: DataMotosService, public dialog: MatDialog) { }
+  constructor(private api: UrlService, public dialogRef: MatDialogRef<MotosDetalhesComponent>, private _data: DataService, public dialog: MatDialog) { }
   ngOnInit() {
     setTimeout(() => {
-      this.detalhe = this._data.getDetalhes();
+      this.detalhe = this._data.getDetalhesMot();
     }, 500);
   }
 

@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { CarrosServiceService } from '../carros-service.service';
 import { MatDialogRef } from '@angular/material';
-import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material';
 import { MotosAnosComponent } from '../motos-anos/motos-anos.component';
-import { MotosService } from '../motos.service';
-import { DataMotosService } from '../data-motos.service';
+import { UrlService } from '../url.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-motos-modelos',
@@ -17,7 +15,7 @@ export class MotosModelosComponent implements OnInit {
 
   motos: any = [];
   motosFiltro = [];
-  constructor(private api: MotosService, public dialogRef: MatDialogRef<MotosModelosComponent>, private _data: DataMotosService, public dialog: MatDialog) { }
+  constructor(private api: UrlService, public dialogRef: MatDialogRef<MotosModelosComponent>, private _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {
     setTimeout(() => {

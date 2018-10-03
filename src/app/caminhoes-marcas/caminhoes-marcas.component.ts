@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataCaminhoesService } from '../data-caminhoes.service';
+import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material';
 import { CaminhoesModelosComponent } from '../caminhoes-modelos/caminhoes-modelos.component';
 
@@ -19,7 +19,7 @@ export class CaminhoesMarcasComponent implements OnInit {
 
   wait = false;
 
-  constructor(private _data: DataCaminhoesService, public dialog: MatDialog) {
+  constructor(private _data: DataService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -29,8 +29,8 @@ export class CaminhoesMarcasComponent implements OnInit {
   }
 
   carregarMarcas() {
-    this.marcasFiltro = this._data.carregar;
-    this.marcas = this._data.carregar;
+    this.marcasFiltro = this._data.carregar_caminhoes;
+    this.marcas = this._data.carregar_caminhoes;
   }
 
   aplicaFiltro(value) {
