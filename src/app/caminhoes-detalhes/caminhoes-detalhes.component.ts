@@ -5,14 +5,14 @@ import { DataCaminhoesService } from '../data-caminhoes.service';
 import { MatDialog } from '@angular/material';
 
 @Component({
-  selector: 'app-caminhao-detalhes',
-  templateUrl: './caminhao-detalhes.component.html',
-  styleUrls: ['./caminhao-detalhes.component.css']
+  selector: 'app-caminhoes-detalhes',
+  templateUrl: './caminhoes-detalhes.component.html',
+  styleUrls: ['./caminhoes-detalhes.component.css']
 })
-export class CaminhaoDetalhesComponent implements OnInit {
+export class CaminhoesDetalhesComponent implements OnInit {
 
   detalhe;
-  constructor(private api: CaminhoesService, public dialogRef: MatDialogRef<CaminhaoDetalhesComponent>, private _data: DataCaminhoesService, public dialog: MatDialog) { }
+  constructor(private api: CaminhoesService, public dialogRef: MatDialogRef<CaminhoesDetalhesComponent>, private _data: DataCaminhoesService, public dialog: MatDialog) { }
   ngOnInit() {
     setTimeout(() => {
       this.detalhe = this._data.getDetalhes();
@@ -23,4 +23,3 @@ export class CaminhaoDetalhesComponent implements OnInit {
     this.dialogRef.close();
   }
 }
-

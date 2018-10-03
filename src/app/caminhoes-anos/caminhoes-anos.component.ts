@@ -3,19 +3,20 @@ import { DataCaminhoesService } from '../data-caminhoes.service';
 import { MatDialog } from '@angular/material';
 import { CaminhoesService } from '../caminhoes.service';
 import { MatDialogRef } from '@angular/material';
-import { CaminhaoDetalhesComponent } from '../caminhao-detalhes/caminhao-detalhes.component';
+import { CaminhoesDetalhesComponent } from '../caminhoes-detalhes/caminhoes-detalhes.component';
 
 @Component({
-  selector: 'app-cam',
-  templateUrl: './cam.component.html',
-  styleUrls: ['./cam.component.css']
+  selector: 'app-caminhoes-anos',
+  templateUrl: './caminhoes-anos.component.html',
+  styleUrls: ['./caminhoes-anos.component.css']
 })
-export class CamComponent implements OnInit {
+
+export class CaminhoesAnosComponent implements OnInit {
 
   txtFiltro: string = "";
   caminhao: any = [];
   caminhaoFiltro = [];
-  constructor(private api: CaminhoesService, public dialogRef: MatDialogRef<CamComponent>, private _data: DataCaminhoesService, public dialog: MatDialog) { }
+  constructor(private api: CaminhoesService, public dialogRef: MatDialogRef<CaminhoesAnosComponent>, private _data: DataCaminhoesService, public dialog: MatDialog) { }
 
   ngOnInit() {
     setTimeout(() => {
@@ -28,9 +29,9 @@ export class CamComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  mostraDetalhes(id){
+  mostraDetalhes(id) {
     this._data.setDetalhes(id);
-    let dialogRef = this.dialog.open(CaminhaoDetalhesComponent, {
+    let dialogRef = this.dialog.open(CaminhoesDetalhesComponent, {
       width: '600px',
     });
     dialogRef.updatePosition();

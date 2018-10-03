@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { DataCaminhoesService } from '../data-caminhoes.service';
 import { MatDialog } from '@angular/material';
-import { CaminhaoComponent } from '../caminhao/caminhao.component';
-
+import { CaminhoesModelosComponent } from '../caminhoes-modelos/caminhoes-modelos.component';
 
 @Component({
-  selector: 'app-caminhoes',
-  templateUrl: './caminhoes.component.html',
-  styleUrls: ['./caminhoes.component.css']
+  selector: 'app-caminhoes-marcas',
+  templateUrl: './caminhoes-marcas.component.html',
+  styleUrls: ['./caminhoes-marcas.component.css']
 })
-export class CaminhoesComponent implements OnInit {
+
+export class CaminhoesMarcasComponent implements OnInit {
 
   txtFiltro: string = "";
   marcas = [];
@@ -17,12 +17,12 @@ export class CaminhoesComponent implements OnInit {
   show: boolean = false;
   selected_marca: any = null;
 
-  wait = false; 
+  wait = false;
 
   constructor(private _data: DataCaminhoesService, public dialog: MatDialog) {
   }
 
-  ngOnInit() { 
+  ngOnInit() {
     setTimeout(() => {
       this.carregarMarcas();
     }, 400);
@@ -52,9 +52,9 @@ export class CaminhoesComponent implements OnInit {
     this.marcasFiltro = this.marcas;
   }
 
-  mostraCaminhoes(id_marca){
+  mostraCaminhoes(id_marca) {
     this._data.setCaminhao(id_marca);
-    let dialogRef = this.dialog.open(CaminhaoComponent, {
+    let dialogRef = this.dialog.open(CaminhoesModelosComponent, {
       width: '600px',
     });
     dialogRef.updatePosition();

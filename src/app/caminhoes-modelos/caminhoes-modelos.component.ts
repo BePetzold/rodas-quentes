@@ -3,17 +3,18 @@ import { CaminhoesService } from '../caminhoes.service';
 import { MatDialogRef } from '@angular/material';
 import { DataCaminhoesService } from '../data-caminhoes.service';
 import { MatDialog } from '@angular/material';
-import { CamComponent } from '../cam/cam.component';
+import { CaminhoesAnosComponent } from '../caminhoes-anos/caminhoes-anos.component';
 
 @Component({
-  selector: 'app-caminhao',
-  templateUrl: './caminhao.component.html',
-  styleUrls: ['./caminhao.component.css']
+  selector: 'app-caminhoes-modelos',
+  templateUrl: './caminhoes-modelos.component.html',
+  styleUrls: ['./caminhoes-modelos.component.css']
 })
-export class CaminhaoComponent implements OnInit {
+export class CaminhoesModelosComponent implements OnInit {
+
   caminhoes: any = [];
   caminhoesFiltro = [];
-  constructor(private api: CaminhoesService, public dialogRef: MatDialogRef<CaminhaoComponent>, private _data: DataCaminhoesService, public dialog: MatDialog) { }
+  constructor(private api: CaminhoesService, public dialogRef: MatDialogRef<CaminhoesModelosComponent>, private _data: DataCaminhoesService, public dialog: MatDialog) { }
 
   ngOnInit() {
     setTimeout(() => {
@@ -26,15 +27,15 @@ export class CaminhaoComponent implements OnInit {
     this.dialogRef.close();
   }
 
-  mostraCaminhoes(id_moto){
-    if(id_moto != 0){
-    this._data.setCaminhoes(id_moto);
-    let dialogRef = this.dialog.open(CamComponent, {
-      width: '600px',
-    });
-    dialogRef.updatePosition();
+  mostraCaminhoes(id_moto) {
+    if (id_moto != 0) {
+      this._data.setCaminhoes(id_moto);
+      let dialogRef = this.dialog.open(CaminhoesAnosComponent, {
+        width: '600px',
+      });
+      dialogRef.updatePosition();
+    }
   }
-}
 
   aplicaFiltro(value) {
     this.caminhoesFiltro = [];
