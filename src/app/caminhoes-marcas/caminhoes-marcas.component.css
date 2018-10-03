@@ -39,7 +39,7 @@
   }
     
 .flex-container > div{
-    background-color: rgba( 255, 186, 57);
+    background-color: rgb(255, 186, 57, 1);
     color: white;
     width: 390px;
     margin: 2%;
@@ -61,7 +61,7 @@
 }
   
 .flex-container > div:hover {
-    background-color: rgba(255, 179, 38, 0.788);
+    background-color: rgba(226, 157, 28, 0.788);
 }
   
 .nav-item .nav-link disabled a{
