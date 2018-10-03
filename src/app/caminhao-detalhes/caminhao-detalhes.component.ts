@@ -22,6 +22,5 @@ export class CaminhaoDetalhesComponent implements OnInit {
   closeDialog() {
     this.dialogRef.close();
   }
-
 }
 

@@ -6,8 +6,8 @@
 
 <h1 mat-dialog-title>MODELOS</h1>
 <div mat-dialog-content>
-  <div id="popup" *ngFor="let caminhao of caminhoesFiltro">
-    <a id="cursor" (click)="mostraCaminhoes(caminhao.id)">{{caminhao.name}}</a>
+  <div id="popup" *ngFor="let veiculo of veiculosFiltro">
+    <a id="cursor" (click)="mostraAutomovel(veiculo.id)">{{veiculo.name}}</a>
   </div>
 </div>
 <br>

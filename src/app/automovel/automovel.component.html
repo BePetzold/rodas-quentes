@@ -1,9 +1,0 @@
-<div class="fechar" mat-dialog-actions>
-  <button mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
-</div>
-<h1 mat-dialog-title>MODELOS</h1>
-<div class="flex-container">
-    <div *ngFor="let auto of automovel" id="popup">
-      <a id="cursor" (click)="mostraDetalhes(auto.id)">{{auto.name}}</a>
-    </div>
-  </div>

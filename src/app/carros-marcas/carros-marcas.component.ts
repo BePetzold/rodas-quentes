@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { DataCaminhoesService } from '../data-caminhoes.service';
+import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material';
-import { CaminhaoComponent } from '../caminhao/caminhao.component';
-
+import { CarrosModelosComponent } from '../carros-modelos/carros-modelos.component';
 
 @Component({
-  selector: 'app-caminhoes',
-  templateUrl: './caminhoes.component.html',
-  styleUrls: ['./caminhoes.component.css']
+  selector: 'app-carros-marcas',
+  templateUrl: './carros-marcas.component.html',
+  styleUrls: ['./carros-marcas.component.css']
 })
-export class CaminhoesComponent implements OnInit {
+export class CarrosMarcasComponent implements OnInit {
 
   txtFiltro: string = "";
   marcas = [];
@@ -17,12 +16,12 @@ export class CaminhoesComponent implements OnInit {
   show: boolean = false;
   selected_marca: any = null;
 
-  wait = false; 
+  wait = false;
 
-  constructor(private _data: DataCaminhoesService, public dialog: MatDialog) {
+  constructor(private _data: DataService, public dialog: MatDialog) {
   }
 
-  ngOnInit() { 
+  ngOnInit() {
     setTimeout(() => {
       this.carregarMarcas();
     }, 400);
@@ -52,11 +51,12 @@ export class CaminhoesComponent implements OnInit {
     this.marcasFiltro = this.marcas;
   }
 
-  mostraCaminhoes(id_marca){
-    this._data.setCaminhao(id_marca);
-    let dialogRef = this.dialog.open(CaminhaoComponent, {
+  mostraCarros(id_marca) {
+    this._data.setVeiculos(id_marca);
+    let dialogRef = this.dialog.open(CarrosModelosComponent, {
       width: '600px',
     });
     dialogRef.updatePosition();
   }
 }
+

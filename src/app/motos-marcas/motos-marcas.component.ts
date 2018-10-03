@@ -1,28 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { DataCaminhoesService } from '../data-caminhoes.service';
+import { DataService } from '../data.service';
 import { MatDialog } from '@angular/material';
-import { CaminhaoComponent } from '../caminhao/caminhao.component';
-
+import { DataMotosService } from '../data-motos.service';
+import { MotosModelosComponent } from '../motos-modelos/motos-modelos.component';
 
 @Component({
-  selector: 'app-caminhoes',
-  templateUrl: './caminhoes.component.html',
-  styleUrls: ['./caminhoes.component.css']
+  selector: 'app-motos-marcas',
+  templateUrl: './motos-marcas.component.html',
+  styleUrls: ['./motos-marcas.component.css']
 })
-export class CaminhoesComponent implements OnInit {
+export class MotosMarcasComponent implements OnInit {
 
   txtFiltro: string = "";
   marcas = [];
   marcasFiltro = [];
-  show: boolean = false;
-  selected_marca: any = null;
 
-  wait = false; 
+  constructor(private _data: DataMotosService, public dialog: MatDialog) { }
 
-  constructor(private _data: DataCaminhoesService, public dialog: MatDialog) {
-  }
-
-  ngOnInit() { 
+  ngOnInit() {
     setTimeout(() => {
       this.carregarMarcas();
     }, 400);
@@ -34,7 +29,6 @@ export class CaminhoesComponent implements OnInit {
   }
 
   aplicaFiltro(value) {
-    this.marcasFiltro = [];
     this.marcasFiltro = this.marcas.filter(function (m) {
       return m.name.toUpperCase().startsWith(value.toUpperCase());
     })
@@ -52,9 +46,9 @@ export class CaminhoesComponent implements OnInit {
     this.marcasFiltro = this.marcas;
   }
 
-  mostraCaminhoes(id_marca){
-    this._data.setCaminhao(id_marca);
-    let dialogRef = this.dialog.open(CaminhaoComponent, {
+  mostraMotos(id_marca) {
+    this._data.setMoto(id_marca);
+    let dialogRef = this.dialog.open(MotosModelosComponent, {
       width: '600px',
     });
     dialogRef.updatePosition();

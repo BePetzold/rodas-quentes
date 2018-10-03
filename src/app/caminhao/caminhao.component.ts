@@ -4,10 +4,6 @@ import { MatDialogRef } from '@angular/material';
 import { DataCaminhoesService } from '../data-caminhoes.service';
 import { MatDialog } from '@angular/material';
 import { CamComponent } from '../cam/cam.component';
-// import { MotoComponent } from '../moto/moto.component';
-// import { MotosService } from '../motos.service';
-// import { DataMotosService } from '../data-motos.service';
-
 
 @Component({
   selector: 'app-caminhao',
@@ -40,14 +36,10 @@ export class CaminhaoComponent implements OnInit {
   }
 }
 
-
   aplicaFiltro(value) {
     this.caminhoesFiltro = [];
     this.caminhoesFiltro = this.caminhoes.filter(function (m) {
       return m.name.toUpperCase().startsWith(value.toUpperCase());
     })
-
   }
-
-
 }

@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { DataCaminhoesService } from '../data-caminhoes.service';
 import { MatDialog } from '@angular/material';
-import { MotosDialogComponent } from '../motos-dialog/motos-dialog.component';
 import { CaminhoesService } from '../caminhoes.service';
 import { MatDialogRef } from '@angular/material';
 import { CaminhaoDetalhesComponent } from '../caminhao-detalhes/caminhao-detalhes.component';
-// import { MotoDetalhesComponent } from '../moto-detalhes/moto-detalhes.component';
-
 
 @Component({
   selector: 'app-cam',
@@ -44,6 +41,5 @@ export class CamComponent implements OnInit {
     this.caminhaoFiltro = this.caminhao.filter(function (m) {
       return m.name.toUpperCase().startsWith(value.toUpperCase());
     })
-
   }
 }
