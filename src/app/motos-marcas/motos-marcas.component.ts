@@ -11,8 +11,8 @@ import { MotosModelosComponent } from '../motos-modelos/motos-modelos.component'
 export class MotosMarcasComponent implements OnInit {
 
   txtFiltro: string = "";
-  marcas = [];
-  marcasFiltro = [];
+  marcas: any = [];
+  marcasFiltro: any = [];
 
   constructor(private _data: DataService, public dialog: MatDialog) { }
 

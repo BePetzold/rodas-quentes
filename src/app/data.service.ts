@@ -8,21 +8,21 @@ import { UrlService } from './url.service';
 export class DataService {
 
   //VARIAVEIS PARA CARROS
-  carregar_carros = [];
+  carregar_carros: any = [];
   veiculos: any = [];
-  automovel = [];
+  automovel: any = [];
   detalhe_carros: any = [];
 
   //VARIAVEIS PARA MOTOS
-  carregar_motos = [];
-  motos = [];
-  moto = [];
+  carregar_motos: any = [];
+  motos: any = [];
+  moto: any = [];
   detalhe_motos: any = [];
 
   //VARIAVEIS PARA CAMINHOES
-  carregar_caminhoes = [];
-  caminhao = [];
-  caminhoes = [];
+  carregar_caminhoes: any = [];
+  caminhao: any = [];
+  caminhoes: any = [];
   detalhe_caminhoes: any = [];
 
   constructor(private api: UrlService) {
@@ -131,7 +131,6 @@ export class DataService {
       this.moto = [{ name: 'Não há motos cadastradas' }];
     } else {
       this.api.getMotoId(id).subscribe(res => {
-        console.log(res);
         this.moto = res;
       });
     }
@@ -168,7 +167,6 @@ export class DataService {
       this.caminhao = [{ name: 'Não há motos cadastradas' }];
     } else {
       this.api.getCaminhaoId(id).subscribe(res => {
-        console.log(res);
         this.caminhao = res;
       });
     }

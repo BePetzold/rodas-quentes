@@ -14,7 +14,7 @@ import { DataService } from '../data.service';
 export class MotosModelosComponent implements OnInit {
 
   motos: any = [];
-  motosFiltro = [];
+  motosFiltro: any = [];
   constructor(private api: UrlService, public dialogRef: MatDialogRef<MotosModelosComponent>, private _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {

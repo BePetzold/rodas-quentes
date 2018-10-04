@@ -14,7 +14,7 @@ import { CarrosAnosComponent } from '../carros-anos/carros-anos.component';
 export class CarrosModelosComponent implements OnInit {
 
   veiculos: any = [];
-  veiculosFiltro = [];
+  veiculosFiltro: any = [];
   constructor(private api: UrlService, public dialogRef: MatDialogRef<CarrosModelosComponent>, private _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {

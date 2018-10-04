@@ -11,8 +11,8 @@ import { CarrosModelosComponent } from '../carros-modelos/carros-modelos.compone
 export class CarrosMarcasComponent implements OnInit {
 
   txtFiltro: string = "";
-  marcas = [];
-  marcasFiltro = [];
+  marcas: any = [];
+  marcasFiltro: any = [];
   show: boolean = false;
   selected_marca: any = null;
 

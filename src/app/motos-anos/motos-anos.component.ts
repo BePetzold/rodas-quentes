@@ -15,7 +15,7 @@ export class MotosAnosComponent implements OnInit {
 
   txtFiltro: string = "";
   moto: any = [];
-  motoFiltro = [];
+  motoFiltro: any = [];
   constructor(private api: UrlService, public dialogRef: MatDialogRef<MotosAnosComponent>, private _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {

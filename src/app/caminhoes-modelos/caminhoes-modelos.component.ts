@@ -13,7 +13,7 @@ import { CaminhoesAnosComponent } from '../caminhoes-anos/caminhoes-anos.compone
 export class CaminhoesModelosComponent implements OnInit {
 
   caminhoes: any = [];
-  caminhoesFiltro = [];
+  caminhoesFiltro: any = [];
   constructor(private api: UrlService, public dialogRef: MatDialogRef<CaminhoesModelosComponent>, private _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {

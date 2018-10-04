@@ -12,7 +12,7 @@ import { CaminhoesModelosComponent } from '../caminhoes-modelos/caminhoes-modelo
 export class CaminhoesMarcasComponent implements OnInit {
 
   txtFiltro: string = "";
-  marcas = [];
+  marcas: any = [];
   marcasFiltro = [];
   show: boolean = false;
   selected_marca: any = null;
