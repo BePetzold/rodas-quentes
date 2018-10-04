@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material';
 
 export class CarrosDetalhesComponent implements OnInit {
 
-  detalhe;
+  detalhe: any = [];
 
   constructor(private api: UrlService, public dialogRef: MatDialogRef<CarrosDetalhesComponent>, private _data: DataService, public dialog: MatDialog) { }
   ngOnInit() {

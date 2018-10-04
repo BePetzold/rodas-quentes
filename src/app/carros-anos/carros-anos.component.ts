@@ -20,7 +20,7 @@ export class CarrosAnosComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.automovel = this._data.getAutomovel();
-    }, 500);
+    }, 600);
   }
 
   closeDialog() {

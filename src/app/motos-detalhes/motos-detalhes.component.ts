@@ -12,7 +12,7 @@ import { DataService } from '../data.service';
 
 export class MotosDetalhesComponent implements OnInit {
 
-  detalhe;
+  detalhe: any = [];
 
   constructor(private api: UrlService, public dialogRef: MatDialogRef<MotosDetalhesComponent>, private _data: DataService, public dialog: MatDialog) { }
   ngOnInit() {

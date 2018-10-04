@@ -24,7 +24,7 @@ export class CarrosMarcasComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.carregarMarcas();
-    }, 500);
+    }, 600);
   }
 
   carregarMarcas() {

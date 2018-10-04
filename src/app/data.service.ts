@@ -11,19 +11,19 @@ export class DataService {
   carregar_carros = [];
   veiculos: any = [];
   automovel = [];
-  detalhe_carros;
+  detalhe_carros: any = [];
 
   //VARIAVEIS PARA MOTOS
   carregar_motos = [];
   motos = [];
   moto = [];
-  detalhe_motos;
+  detalhe_motos: any = [];
 
   //VARIAVEIS PARA CAMINHOES
   carregar_caminhoes = [];
   caminhao = [];
   caminhoes = [];
-  detalhe_caminhoes;
+  detalhe_caminhoes: any = [];
 
   constructor(private api: UrlService) {
     this.preenArrCar();
