@@ -15,10 +15,11 @@ export class MotosDetalhesComponent implements OnInit {
   detalhe: any = [];
 
   constructor(private api: UrlService, public dialogRef: MatDialogRef<MotosDetalhesComponent>, private _data: DataService, public dialog: MatDialog) { }
+  
   ngOnInit() {
     setTimeout(() => {
       this.detalhe = this._data.getDetalhesMot();
-    }, 500);
+    }, 600);
   }
 
   closeDialog() {

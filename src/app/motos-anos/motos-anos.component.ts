@@ -12,17 +12,17 @@ import { MotosDetalhesComponent } from '../motos-detalhes/motos-detalhes.compone
 })
 
 export class MotosAnosComponent implements OnInit {
-
-  txtFiltro: string = "";
+ 
   moto: any = [];
   motoFiltro: any = [];
+
   constructor(private api: UrlService, public dialogRef: MatDialogRef<MotosAnosComponent>, private _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {
     setTimeout(() => {
       this.moto = this._data.getMotos();
       this.motoFiltro = this.moto;
-    }, 500);
+    }, 600);
   }
 
   closeDialog() {

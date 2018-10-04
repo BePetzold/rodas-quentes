@@ -18,7 +18,7 @@ export class CarrosDetalhesComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.detalhe = this._data.getDetalhesCar();
-    }, 500);
+    }, 600);
   }
 
   closeDialog() {

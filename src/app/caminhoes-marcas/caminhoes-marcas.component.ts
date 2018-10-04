@@ -11,13 +11,8 @@ import { CaminhoesModelosComponent } from '../caminhoes-modelos/caminhoes-modelo
 
 export class CaminhoesMarcasComponent implements OnInit {
 
-  txtFiltro: string = "";
   marcas: any = [];
   marcasFiltro = [];
-  show: boolean = false;
-  selected_marca: any = null;
-
-  wait = false;
 
   constructor(private _data: DataService, public dialog: MatDialog) {
   }
@@ -25,7 +20,7 @@ export class CaminhoesMarcasComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.carregarMarcas();
-    }, 500);
+    }, 600);
   }
 
   carregarMarcas() {

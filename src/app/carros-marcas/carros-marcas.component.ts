@@ -10,13 +10,8 @@ import { CarrosModelosComponent } from '../carros-modelos/carros-modelos.compone
 })
 export class CarrosMarcasComponent implements OnInit {
 
-  txtFiltro: string = "";
   marcas: any = [];
   marcasFiltro: any = [];
-  show: boolean = false;
-  selected_marca: any = null;
-
-  wait = false;
 
   constructor(private _data: DataService, public dialog: MatDialog) {
   }

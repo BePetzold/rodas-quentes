@@ -9,14 +9,11 @@ export class FooterComponent implements OnInit {
 
   invisivel = "invisivel";
 
-  constructor() {
-    
-  }
+  constructor() {}
 
   ngOnInit() {
     setTimeout(() => {
       this.invisivel = "ftr";
     }, 800);
   }
-
 }

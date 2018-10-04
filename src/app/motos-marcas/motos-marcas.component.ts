@@ -10,7 +10,6 @@ import { MotosModelosComponent } from '../motos-modelos/motos-modelos.component'
 })
 export class MotosMarcasComponent implements OnInit {
 
-  txtFiltro: string = "";
   marcas: any = [];
   marcasFiltro: any = [];
 
@@ -19,7 +18,7 @@ export class MotosMarcasComponent implements OnInit {
   ngOnInit() {
     setTimeout(() => {
       this.carregarMarcas();
-    }, 500);
+    }, 600);
   }
 
   carregarMarcas() {

@@ -13,9 +13,9 @@ import { CaminhoesDetalhesComponent } from '../caminhoes-detalhes/caminhoes-deta
 
 export class CaminhoesAnosComponent implements OnInit {
 
-  txtFiltro: string = "";
   caminhao: any = [];
   caminhaoFiltro: any = [];
+  
   constructor(private api: UrlService, public dialogRef: MatDialogRef<CaminhoesAnosComponent>, private _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {

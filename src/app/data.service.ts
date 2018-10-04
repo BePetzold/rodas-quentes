@@ -66,30 +66,27 @@ export class DataService {
       return 0;
     })
   }
+
   setVeiculos(marca) {
-    if (marca == 0) {
-      this.veiculos = [{ name: 'Não há veiculos cadatrados', id: 0 }];
-    } else {
-      this.api.getVeiculosMarca(marca).subscribe(res => {
-        this.veiculos = res;
-      });
-    }
+    this.api.getVeiculosMarca(marca).subscribe(res => {
+      this.veiculos = res;
+    });
   }
+
   getVeiculos() {
     return this.veiculos;
   }
+
   setAutomovel(id) {
-    if (id == 0) {
-      this.automovel = [{ name: 'Não há veiculos cadatrados' }];
-    } else {
-      this.api.getAutoId(id).subscribe(res => {
-        this.automovel = res;
-      });
-    }
+    this.api.getAutoId(id).subscribe(res => {
+      this.automovel = res;
+    });
   }
+
   getAutomovel() {
     return this.automovel;
   }
+
   setDetalhesCar(id) {
     if (id == 0) {
       this.detalhe_carros = [{ name: 'Não há veiculos cadatrados' }];
@@ -99,6 +96,7 @@ export class DataService {
       });
     }
   }
+
   getDetalhesCar() {
     return this.detalhe_carros;
   }
@@ -114,38 +112,31 @@ export class DataService {
       return 0;
     })
   }
+
   setMotos(marca) {
-    if (marca == 0) {
-      this.motos = [{ name: 'Não há motos cadatradas', id: 0 }];
-    } else {
-      this.api.getMotoneta(marca).subscribe(res => {
-        this.motos = res;
-      });
-    }
+    this.api.getMotoneta(marca).subscribe(res => {
+      this.motos = res;
+    });
   }
+
   getMotos() {
     return this.motos;
   }
+
   setMoto(id) {
-    if (id == 0) {
-      this.moto = [{ name: 'Não há motos cadastradas' }];
-    } else {
-      this.api.getMotoId(id).subscribe(res => {
-        this.moto = res;
-      });
-    }
+    this.api.getMotoId(id).subscribe(res => {
+      this.moto = res;
+    });
   }
+
   getMoto() {
     return this.moto;
   }
+
   setDetalhesMot(id) {
-    if (id == 0) {
-      this.detalhe_motos = [{ name: 'Não há veiculos cadatrados' }];
-    } else {
-      this.api.getMotoDetalhes(id).subscribe(res => {
-        this.detalhe_motos = res;
-      });
-    }
+    this.api.getMotoDetalhes(id).subscribe(res => {
+      this.detalhe_motos = res;
+    });
   }
   getDetalhesMot() {
     return this.detalhe_motos;
@@ -162,39 +153,33 @@ export class DataService {
       return 0;
     })
   }
+
   setCaminhao(id) {
-    if (id == 0) {
-      this.caminhao = [{ name: 'Não há motos cadastradas' }];
-    } else {
-      this.api.getCaminhaoId(id).subscribe(res => {
-        this.caminhao = res;
-      });
-    }
+    this.api.getCaminhaoId(id).subscribe(res => {
+      this.caminhao = res;
+    });
   }
+
   getCaminhao() {
     return this.caminhao;
   }
+
   getCaminhoes() {
     return this.caminhoes;
   }
+
   setCaminhoes(marca) {
-    if (marca == 0) {
-      this.caminhoes = [{ name: 'Não há motos cadatradas', id: 0 }];
-    } else {
-      this.api.getCaminhoes(marca).subscribe(res => {
-        this.caminhoes = res;
-      });
-    }
+    this.api.getCaminhoes(marca).subscribe(res => {
+      this.caminhoes = res;
+    });
   }
+
   setDetalhesCam(id) {
-    if (id == 0) {
-      this.detalhe_caminhoes = [{ name: 'Não há veiculos cadatrados' }];
-    } else {
-      this.api.getCaminhaoDetalhes(id).subscribe(res => {
-        this.detalhe_caminhoes = res;
-      });
-    }
+    this.api.getCaminhaoDetalhes(id).subscribe(res => {
+      this.detalhe_caminhoes = res;
+    });
   }
+
   getDetalhesCam() {
     return this.detalhe_caminhoes;
   }

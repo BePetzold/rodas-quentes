@@ -15,13 +15,14 @@ export class CarrosModelosComponent implements OnInit {
 
   veiculos: any = [];
   veiculosFiltro: any = [];
+
   constructor(private api: UrlService, public dialogRef: MatDialogRef<CarrosModelosComponent>, private _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {
     setTimeout(() => {
       this.veiculos = this._data.getVeiculos();
       this.veiculosFiltro = this.veiculos;
-    }, 500);
+    }, 600);
   }
 
   closeDialog() {

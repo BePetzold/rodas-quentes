@@ -62,4 +62,4 @@ import { CaminhoesDetalhesComponent } from './caminhoes-detalhes/caminhoes-detal
   bootstrap: [AppComponent],
   entryComponents: [CarrosModelosComponent, CarrosAnosComponent, CarrosDetalhesComponent, MotosModelosComponent, MotosAnosComponent, MotosDetalhesComponent, CaminhoesModelosComponent, CaminhoesAnosComponent, CaminhoesDetalhesComponent]
 })
-export class AppModule { }
+export class AppModule {}
