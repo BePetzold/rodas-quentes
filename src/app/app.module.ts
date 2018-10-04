@@ -24,6 +24,7 @@ import { CaminhoesMarcasComponent } from './caminhoes-marcas/caminhoes-marcas.co
 import { CaminhoesModelosComponent } from './caminhoes-modelos/caminhoes-modelos.component';
 import { CaminhoesAnosComponent } from './caminhoes-anos/caminhoes-anos.component';
 import { CaminhoesDetalhesComponent } from './caminhoes-detalhes/caminhoes-detalhes.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { CaminhoesDetalhesComponent } from './caminhoes-detalhes/caminhoes-detal
     CaminhoesMarcasComponent,
     CaminhoesModelosComponent,
     CaminhoesAnosComponent,
-    CaminhoesDetalhesComponent
+    CaminhoesDetalhesComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,

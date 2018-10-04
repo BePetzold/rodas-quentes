@@ -65,6 +65,9 @@ a:hover{
 .dropdown-content a.a3:hover {
     background-color: rgba( 255, 186, 57);
 }
+.dropdown-content a.a4:hover {
+    background-color: rgba(84, 26, 139, 0.719);
+}
 
 .dropdown:hover .dropdown-content {
     display: block;
