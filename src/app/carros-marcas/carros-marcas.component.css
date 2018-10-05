@@ -47,6 +47,8 @@
   font-size: 22px;
   cursor: pointer;
   transition: 0.5s;
+  box-shadow: 0px 16px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 10px;
 }
 
 #pesquisar{
