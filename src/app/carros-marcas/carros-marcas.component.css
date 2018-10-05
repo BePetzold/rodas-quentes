@@ -57,10 +57,6 @@
     width: 390px;
 }
 
-#comprar{
-    margin-top: 2%; 
-}
-
 .flex-container > div:hover {
     background-color: rgba(0, 71, 224, 0.7);
 }
