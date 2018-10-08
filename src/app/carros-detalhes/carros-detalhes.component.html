@@ -1,6 +1,9 @@
-<div class="fechar" mat-dialog-actions>
-  <button mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
+<div [class]="det">
+  <div class="fechar" mat-dialog-actions>
+    <button mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
+  </div>
 </div>
+
 <h1 mat-dialog-title>INFORMAÇÕES</h1>
 <div class="flex-container" id="popup">
   <div><span>MARCA: </span><br>{{detalhe.marca}} </div>
@@ -10,4 +13,19 @@
   <div *ngIf="detalhe.ano_modelo!=32000"><span>ANO: </span><br>{{detalhe.ano_modelo}} </div>
   <div *ngIf="detalhe.ano_modelo==32000"><span>ANO: </span><br> Zero KM </div>
   <div><span>COMBUSTÍVEL: </span><br>{{detalhe.combustivel}} </div>
+</div>
+
+<br>
+<div [class]="imagem">
+  <app-data></app-data>
+</div>
+
+<div [class]="imagem">
+  <img src="https://image.ibb.co/mWdVw9/oie_CIi8j_WHYu0oo.png">
+</div>
+
+<div [class]="det">
+  <div class="print">
+    <button class="btn btn-outline-light" id="printButton" (click)="change()">IMPRIMIR INFORMAÇÕES</button>
+  </div>
 </div>

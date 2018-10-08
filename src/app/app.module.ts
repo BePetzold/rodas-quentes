@@ -25,6 +25,7 @@ import { CaminhoesModelosComponent } from './caminhoes-modelos/caminhoes-modelos
 import { CaminhoesAnosComponent } from './caminhoes-anos/caminhoes-anos.component';
 import { CaminhoesDetalhesComponent } from './caminhoes-detalhes/caminhoes-detalhes.component';
 import { AboutComponent } from './about/about.component';
+import { DataComponent } from './data/data.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { AboutComponent } from './about/about.component';
     CaminhoesModelosComponent,
     CaminhoesAnosComponent,
     CaminhoesDetalhesComponent,
-    AboutComponent
+    AboutComponent,
+    DataComponent
   ],
   imports: [
     BrowserModule,
