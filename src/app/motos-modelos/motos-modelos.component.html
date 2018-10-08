@@ -1,6 +1,6 @@
 <div mat-dialog-actions>
   <input id="pesquisar" class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar"
-    #filtro (keyup)="aplicaFiltro(filtro.value)">
+    #filtro (keyup)="aplicaFiltro(filtro.value.trim())">
   <button id="botao" mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
 </div>
 

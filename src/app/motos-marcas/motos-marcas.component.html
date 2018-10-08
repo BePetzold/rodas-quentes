@@ -2,7 +2,7 @@
   <div>
     <form class="form-inline my-2 my-lg-0">
       <input id="pesquisar" class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar"
-        #filtro (keyup)="aplicaFiltro(filtro.value)">
+        #filtro (keyup)="aplicaFiltro(filtro.value.trim())">
     </form>
   </div>
 
