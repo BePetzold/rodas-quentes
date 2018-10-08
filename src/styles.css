@@ -45,6 +45,5 @@ body {
   background-image: url("https://papers.co/wallpaper/papers.co-mh75-aspalt-hd-skid-marks-nature-pattern-36-3840x2400-4k-wallpaper.jpg");
   background-position: center;
   background-attachment: fixed;
-  min-width: 100%;
-  min-height: 300%;
+  background-size: auto;
 }
