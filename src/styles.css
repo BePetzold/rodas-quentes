@@ -61,7 +61,10 @@ body {
 
 .invisivel {
  display : none;
- background-size: none!important;
+ background-size: auto!important;
+ background: initial!important;
+ background-color: transparent;
+ background-position: 0% 0%;
 }
 
 .imagem {

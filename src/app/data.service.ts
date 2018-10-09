@@ -9,7 +9,6 @@ export class DataService {
   //VARIAVEIS PARA IMPRESSAO
   det = "det";
   imagem = "imagem";
-  body = "body";
 
   //VARIAVEIS PARA CARROS
   carregar_carros: any = [];
@@ -192,7 +191,6 @@ export class DataService {
   printData() {
     window.print();
     this.det = "det";
-    this.body = "body";
     this.imagem = "imagem";
   }
   
@@ -201,7 +199,6 @@ export class DataService {
   }
   async changeData() {
     this.det = "invisivel";
-    this.body = "invisivel";
     this.imagem = "det";
     await this.delay(500);
     this.printData();
