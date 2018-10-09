@@ -30,6 +30,9 @@ body {
 	-ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
+.mat-dialog-container2{
+ display: none;
+}
 
 #popup{
   text-align: center;
@@ -40,7 +43,7 @@ body {
    cursor: pointer;
 }
 
-body {
+.body {
   background-image: url("https://papers.co/wallpaper/papers.co-mh75-aspalt-hd-skid-marks-nature-pattern-36-3840x2400-4k-wallpaper.jpg");
   background-attachment: fixed;
   background-size: cover!important;
@@ -61,6 +64,8 @@ body {
 
 .invisivel {
  display : none;
+ background: none;
+ box-shadow: none;
 }
 
 .imagem {
@@ -76,3 +81,4 @@ body {
   margin-left: 20cm;
   margin-right: 20cm;
 }
+
