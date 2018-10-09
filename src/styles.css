@@ -40,9 +40,40 @@ body {
    cursor: pointer;
 }
 
-
 body {
   background-image: url("https://papers.co/wallpaper/papers.co-mh75-aspalt-hd-skid-marks-nature-pattern-36-3840x2400-4k-wallpaper.jpg");
   background-attachment: fixed;
   background-size: cover!important;
+}
+
+.print{
+  text-align: center;
+}
+
+#printButton{
+  padding-left: 30%;
+  padding-right: 30%;
+}
+
+.det{
+  display: block;
+}
+
+.invisivel {
+ display : none;
+ background-size: none!important;
+}
+
+.imagem {
+  display : none;
+}
+
+@page :left {
+  margin-left: 20cm;
+  margin-right: 20cm;
+}
+
+@page :right {
+  margin-left: 20cm;
+  margin-right: 20cm;
 }

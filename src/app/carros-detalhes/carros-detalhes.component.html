@@ -1,4 +1,4 @@
-<div [class]="det">
+<div [class]="_data.det">
   <div class="fechar" mat-dialog-actions>
     <button mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
   </div>
@@ -16,15 +16,15 @@
 </div>
 
 <br>
-<div [class]="imagem">
+<div [class]="_data.imagem">
   <app-data></app-data>
 </div>
 
-<div [class]="imagem">
+<div [class]="_data.imagem">
   <img src="https://image.ibb.co/mWdVw9/oie_CIi8j_WHYu0oo.png">
 </div>
 
-<div [class]="det">
+<div [class]="_data.det">
   <div class="print">
     <button class="btn btn-outline-light" id="printButton" (click)="change()">IMPRIMIR INFORMAÇÕES</button>
   </div>

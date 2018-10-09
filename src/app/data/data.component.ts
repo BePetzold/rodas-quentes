@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-data',
-  templateUrl: './data.component.html',
   styleUrls: ['./data.component.css'],
   template:
     `<div class="data">

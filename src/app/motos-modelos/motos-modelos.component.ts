@@ -16,7 +16,7 @@ export class MotosModelosComponent implements OnInit {
   motos: any = [];
   motosFiltro: any = [];
 
-  constructor(private api: UrlService, public dialogRef: MatDialogRef<MotosModelosComponent>, private _data: DataService, public dialog: MatDialog) { }
+  constructor(private api: UrlService, public dialogRef: MatDialogRef<MotosModelosComponent>, public _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {
     setTimeout(() => {

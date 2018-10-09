@@ -1,13 +1,15 @@
-<div mat-dialog-actions>
-  <input id="pesquisar" class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar"
-    #filtro (keyup)="aplicaFiltro(filtro.value.trim())">
-  <button id="botao" mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
-</div>
-
-<h1 mat-dialog-title>MODELOS</h1>
-<div mat-dialog-content>
-  <div id="popup" *ngFor="let caminhao of caminhoesFiltro">
-    <a id="cursor" (click)="mostraCaminhoes(caminhao.id)">{{caminhao.name}}</a>
+<div [class]="_data.det">
+  <div mat-dialog-actions>
+    <input id="pesquisar" class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar"
+      #filtro (keyup)="aplicaFiltro(filtro.value.trim())">
+    <button id="botao" mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
   </div>
+
+  <h1 mat-dialog-title>MODELOS</h1>
+  <div mat-dialog-content>
+    <div id="popup" *ngFor="let caminhao of caminhoesFiltro">
+      <a id="cursor" (click)="mostraCaminhoes(caminhao.id)">{{caminhao.name}}</a>
+    </div>
+  </div>
+  <br>
 </div>
-<br>

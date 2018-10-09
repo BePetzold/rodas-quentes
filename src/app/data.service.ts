@@ -6,6 +6,10 @@ import { UrlService } from './url.service';
 })
 
 export class DataService {
+  //VARIAVEIS PARA IMPRESSAO
+  det = "det";
+  imagem = "imagem";
+  body = "body";
 
   //VARIAVEIS PARA CARROS
   carregar_carros: any = [];
@@ -182,5 +186,24 @@ export class DataService {
 
   getDetalhesCam() {
     return this.detalhe_caminhoes;
+  }
+
+  //IMPRESSAO
+  printData() {
+    window.print();
+    this.det = "det";
+    this.body = "body";
+    this.imagem = "imagem";
+  }
+  
+  async delay(ms: number) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
+  async changeData() {
+    this.det = "invisivel";
+    this.body = "invisivel";
+    this.imagem = "det";
+    await this.delay(500);
+    this.printData();
   }
 }

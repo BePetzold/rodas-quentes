@@ -15,7 +15,7 @@ export class CarrosAnosComponent implements OnInit {
 
   automovel: any = [];
 
-  constructor(private api: UrlService, public dialogRef: MatDialogRef<CarrosAnosComponent>, private _data: DataService, public dialog: MatDialog) { }
+  constructor(private api: UrlService, public dialogRef: MatDialogRef<CarrosAnosComponent>, public _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {
     setTimeout(() => {

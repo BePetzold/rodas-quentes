@@ -23,3 +23,10 @@ div{
     text-align: left;
     font-size: 16x;
 }
+
+img{
+    width: 50%;
+    height: 50%;
+    margin-left: 25%;
+    filter: grayscale(100%);
+}

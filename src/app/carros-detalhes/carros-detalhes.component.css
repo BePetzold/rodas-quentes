@@ -24,27 +24,6 @@ div{
     font-size: 16x;
 }
 
-.print{
-    text-align: center;
-}
-
-#printButton{
-    padding-left: 30%;
-    padding-right: 30%;
-}
-
-.det{
-    display: block;
-}
-
-.invisivel {
-   display : none;
-}
-
-.imagem {
-    display : none;
-}
-
 img{
     width: 50%;
     height: 50%;

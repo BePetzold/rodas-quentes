@@ -13,7 +13,7 @@ export class CarrosMarcasComponent implements OnInit {
   marcas: any = [];
   marcasFiltro: any = [];
 
-  constructor(private _data: DataService, public dialog: MatDialog) {
+  constructor(public _data: DataService, public dialog: MatDialog) {
   }
 
   ngOnInit() {

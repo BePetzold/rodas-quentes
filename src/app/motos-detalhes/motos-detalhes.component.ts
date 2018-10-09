@@ -14,7 +14,7 @@ export class MotosDetalhesComponent implements OnInit {
 
   detalhe: any = [];
 
-  constructor(private api: UrlService, public dialogRef: MatDialogRef<MotosDetalhesComponent>, private _data: DataService, public dialog: MatDialog) { }
+  constructor(private api: UrlService, public dialogRef: MatDialogRef<MotosDetalhesComponent>, public _data: DataService, public dialog: MatDialog) { }
   
   ngOnInit() {
     setTimeout(() => {
@@ -24,5 +24,9 @@ export class MotosDetalhesComponent implements OnInit {
 
   closeDialog() {
     this.dialogRef.close();
+  }
+
+  change() {
+    this._data.changeData();
   }
 }

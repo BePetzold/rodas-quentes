@@ -16,7 +16,7 @@ export class CarrosModelosComponent implements OnInit {
   veiculos: any = [];
   veiculosFiltro: any = [];
 
-  constructor(private api: UrlService, public dialogRef: MatDialogRef<CarrosModelosComponent>, private _data: DataService, public dialog: MatDialog) { }
+  constructor(private api: UrlService, public dialogRef: MatDialogRef<CarrosModelosComponent>, public _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {
     setTimeout(() => {

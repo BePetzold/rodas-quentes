@@ -14,7 +14,7 @@ export class CaminhoesMarcasComponent implements OnInit {
   marcas: any = [];
   marcasFiltro = [];
 
-  constructor(private _data: DataService, public dialog: MatDialog) {
+  constructor(public _data: DataService, public dialog: MatDialog) {
   }
 
   ngOnInit() {
