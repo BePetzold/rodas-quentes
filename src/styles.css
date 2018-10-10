@@ -36,12 +36,6 @@
    cursor: pointer;
 }
 
-html, body {
-  background-image: url("https://papers.co/wallpaper/papers.co-mh75-aspalt-hd-skid-marks-nature-pattern-36-3840x2400-4k-wallpaper.jpg");
-  background-attachment: fixed;
-  background-size: cover!important;
-}
-
 .print{
   text-align: center;
 }
@@ -75,3 +69,17 @@ html, body {
   margin-right: 20cm;
 }
 
+html, body { 
+  height: 100%;  
+  background-image: url("https://papers.co/wallpaper/papers.co-mh75-aspalt-hd-skid-marks-nature-pattern-36-3840x2400-4k-wallpaper.jpg");
+  background-attachment: fixed;
+  background-size: cover!important;
+  font-family: Roboto, Arial, sans-serif;	
+  margin: 0;
+}	
+
+.body {
+  background-image: url("https://papers.co/wallpaper/papers.co-mh75-aspalt-hd-skid-marks-nature-pattern-36-3840x2400-4k-wallpaper.jpg");
+  background-attachment: fixed;
+  background-size: cover!important;
+}
