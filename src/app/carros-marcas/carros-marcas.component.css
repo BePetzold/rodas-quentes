@@ -70,6 +70,7 @@
 }
 
 .sticky{
+  cursor: pointer;
   top: 0;
   position: -webkit-sticky;
   position: -moz-sticky;
