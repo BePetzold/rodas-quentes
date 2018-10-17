@@ -1,12 +1,15 @@
 <div class="body">
   <div [class]="_data.det">
+    <div class="sticky">
+      <marquee direction="down" height="100px" scrollamount="3" routerLink="/anuncios"><img src="https://www.ic3solutions.com/wp-content/uploads/2017/07/bombarded-with-ads.jpg"></marquee>
+    </div>
     <div>
       <form class="form-inline my-2 my-lg-0">
         <input id="pesquisar" class="form-control mr-sm-2" type="search" placeholder="Pesquisar..." aria-label="Pesquisar"
           #filtro (keyup)="aplicaFiltro(filtro.value.trim())">
       </form>
     </div>
-
+    <br>
     <div class="flex-container">
       <div *ngFor="let marca of marcasFiltro">
         <div (click)="mostraCaminhoes(marca.id)" class="teste">{{marca.name}}</div>
