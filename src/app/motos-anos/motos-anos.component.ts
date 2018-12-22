@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
-import { DataService } from '../data.service';
+import { PrintService } from '../print.service';
 import { UrlService } from '../url.service';
 import { MatDialogRef } from '@angular/material';
 import { MotosDetalhesComponent } from '../motos-detalhes/motos-detalhes.component';
@@ -12,17 +12,25 @@ import { MotosDetalhesComponent } from '../motos-detalhes/motos-detalhes.compone
 })
 
 export class MotosAnosComponent implements OnInit {
- 
+
   moto: any = [];
   motoFiltro: any = [];
+  loading = true;
 
-  constructor(private api: UrlService, public dialogRef: MatDialogRef<MotosAnosComponent>, public _data: DataService, public dialog: MatDialog) { }
+  constructor(private api: UrlService, public dialogRef: MatDialogRef<MotosAnosComponent>, public print: PrintService, public dialog: MatDialog) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.moto = this._data.getMotos();
-      this.motoFiltro = this.moto;
-    }, 600);
+    this.getModelos();
+  }
+
+  getModelos() {
+    this.api.getMotoneta().subscribe(
+      res => {
+        this.moto = res;
+        this.motoFiltro = res;
+        this.loading = false;
+      }
+    )
   }
 
   closeDialog() {
@@ -30,7 +38,7 @@ export class MotosAnosComponent implements OnInit {
   }
 
   mostraDetalhes(id) {
-    this._data.setDetalhesMot(id);
+    this.api.id_motos_modelo = id;
     let dialogRef = this.dialog.open(MotosDetalhesComponent, {
       width: '600px',
     });
@@ -40,7 +48,7 @@ export class MotosAnosComponent implements OnInit {
   aplicaFiltro(value) {
     this.motoFiltro = [];
     this.motoFiltro = this.moto.filter(function (m) {
-      return m.name.toUpperCase().startsWith(value.toUpperCase());
+      return m.name.toUpperCase().includes(value.toUpperCase());
     })
   }
 }

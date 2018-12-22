@@ -5,7 +5,6 @@ import { MotosMarcasComponent } from './motos-marcas/motos-marcas.component';
 import { CaminhoesMarcasComponent } from './caminhoes-marcas/caminhoes-marcas.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AboutComponent } from './about/about.component';
-import { AnunciosComponent } from './anuncios/anuncios.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
@@ -13,7 +12,6 @@ const routes: Routes = [
   { path: 'motos', component: MotosMarcasComponent},
   { path: 'caminhoes', component: CaminhoesMarcasComponent},
   { path: 'sobre', component: AboutComponent},
-  { path: 'anuncios', component: AnunciosComponent},
 ];
 
 @NgModule({

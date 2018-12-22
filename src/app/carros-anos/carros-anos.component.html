@@ -1,9 +1,12 @@
-<div [class]="_data.det">
+<div [class]="print.det">
   <div class="fechar" mat-dialog-actions>
     <button mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
   </div>
   <h1 mat-dialog-title>ANO MODELO</h1>
   <div class="flex-container">
+    <p *ngIf="loading">
+      <ngb-progressbar type="dark" [value]="100" [striped]="true" [animated]="true">Carregando...</ngb-progressbar>
+    </p>
     <div *ngFor="let auto of automovel" id="popup">
       <a id="cursor" (click)="mostraDetalhes(auto.id)">{{auto.name}}</a>
     </div>

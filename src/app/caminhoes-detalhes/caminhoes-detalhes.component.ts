@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UrlService } from '../url.service';
 import { MatDialogRef } from '@angular/material';
-import { DataService } from '../data.service';
+import { PrintService } from '../print.service';
 import { MatDialog } from '@angular/material';
 
 @Component({
@@ -12,12 +12,21 @@ import { MatDialog } from '@angular/material';
 export class CaminhoesDetalhesComponent implements OnInit {
 
   detalhe: any = [];
+  loading = true;
 
-  constructor(private api: UrlService, public dialogRef: MatDialogRef<CaminhoesDetalhesComponent>, public _data: DataService, public dialog: MatDialog) { }
+  constructor(private api: UrlService, public dialogRef: MatDialogRef<CaminhoesDetalhesComponent>, public print: PrintService, public dialog: MatDialog) { }
+
   ngOnInit() {
-    setTimeout(() => {
-      this.detalhe = this._data.getDetalhesCam();
-    }, 600);
+    this.getDetalhes();
+  }
+
+  getDetalhes() {
+    this.api.getCaminhaoDetalhes().subscribe(
+      res => {
+        this.detalhe = res;
+        this.loading = false;
+      }
+    )
   }
 
   closeDialog() {
@@ -25,6 +34,6 @@ export class CaminhoesDetalhesComponent implements OnInit {
   }
 
   change() {
-    this._data.changeData();
+    this.print.changeData();
   }
 }

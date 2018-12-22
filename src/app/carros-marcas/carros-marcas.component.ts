@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
+import { PrintService } from '../print.service';
 import { MatDialog } from '@angular/material';
 import { CarrosModelosComponent } from '../carros-modelos/carros-modelos.component';
+import { UrlService } from '../url.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carros-marcas',
@@ -13,24 +15,27 @@ export class CarrosMarcasComponent implements OnInit {
   marcas: any = [];
   marcasFiltro: any = [];
 
-  constructor(public _data: DataService, public dialog: MatDialog) {
+  constructor(public print: PrintService, public dialog: MatDialog, public api: UrlService, public router: Router) {
   }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.carregarMarcas();
-    }, 600);
+    this.carregarMarcas();
   }
 
   carregarMarcas() {
-    this.marcasFiltro = this._data.carregar_carros;
-    this.marcas = this._data.carregar_carros;
+    this.api.getMarcasCar().subscribe(
+      res => {
+        this.marcasFiltro = res;
+        this.marcas = res;
+        this.sortMarcas();
+      }
+    )
   }
 
   aplicaFiltro(value) {
     this.marcasFiltro = [];
     this.marcasFiltro = this.marcas.filter(function (m) {
-      return m.name.toUpperCase().startsWith(value.toUpperCase());
+      return m.name.toUpperCase().includes(value.toUpperCase());
     })
   }
 
@@ -47,11 +52,17 @@ export class CarrosMarcasComponent implements OnInit {
   }
 
   mostraCarros(id_marca) {
-    this._data.setVeiculos(id_marca);
+    this.api.id_marca_carros = id_marca;
     let dialogRef = this.dialog.open(CarrosModelosComponent, {
       width: '600px',
     });
     dialogRef.updatePosition();
+  }
+
+  clearInput() {
+    let input = <HTMLInputElement>document.getElementById('pesquisar');
+    input.value = '';
+    this.aplicaFiltro(input.value);
   }
 }
 

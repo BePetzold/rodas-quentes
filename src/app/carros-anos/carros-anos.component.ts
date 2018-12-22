@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UrlService } from '../url.service';
 import { MatDialogRef } from '@angular/material';
-import { DataService } from '../data.service';
+import { PrintService } from '../print.service';
 import { MatDialog } from '@angular/material';
 import { CarrosDetalhesComponent } from '../carros-detalhes/carros-detalhes.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-carros-anos',
@@ -14,13 +15,21 @@ import { CarrosDetalhesComponent } from '../carros-detalhes/carros-detalhes.comp
 export class CarrosAnosComponent implements OnInit {
 
   automovel: any = [];
+  loading = true;
 
-  constructor(private api: UrlService, public dialogRef: MatDialogRef<CarrosAnosComponent>, public _data: DataService, public dialog: MatDialog) { }
+  constructor(public api: UrlService, public dialogRef: MatDialogRef<CarrosAnosComponent>, public print: PrintService, public dialog: MatDialog, public actroute: ActivatedRoute, public router: Router) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.automovel = this._data.getAutomovel();
-    }, 600);
+    this.getModelos();
+  }
+  
+  getModelos(){
+    this.api.getAutoId().subscribe(
+      res => {
+        this.automovel = res;
+        this.loading = false;
+      }
+    )
   }
 
   closeDialog() {
@@ -28,7 +37,7 @@ export class CarrosAnosComponent implements OnInit {
   }
 
   mostraDetalhes(id) {
-    this._data.setDetalhesCar(id);
+    this.api.id_carros_modelo = id;
     let dialogRef = this.dialog.open(CarrosDetalhesComponent, {
       width: '600px',
     });

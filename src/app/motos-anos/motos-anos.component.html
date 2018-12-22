@@ -1,10 +1,13 @@
-<div [class]="_data.det">
+<div [class]="print.det">
   <div class="fechar" mat-dialog-actions>
     <button mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
   </div>
 
   <h1 mat-dialog-title>ANO MODELO</h1>
   <div mat-dialog-content>
+    <p *ngIf="loading">
+      <ngb-progressbar type="dark" [value]="100" [striped]="true" [animated]="true">Carregando...</ngb-progressbar>
+    </p>
     <div id="popup" *ngFor="let moto of motoFiltro">
       <a id="cursor" (click)="mostraDetalhes(moto.id)">{{moto.name}}</a>
     </div>

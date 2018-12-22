@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { UrlService } from '../url.service';
 import { MatDialogRef } from '@angular/material';
-import { DataService } from '../data.service';
+import { PrintService } from '../print.service';
 import { MatDialog } from '@angular/material';
 import { CarrosAnosComponent } from '../carros-anos/carros-anos.component';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-carros-modelos',
@@ -15,14 +16,22 @@ export class CarrosModelosComponent implements OnInit {
 
   veiculos: any = [];
   veiculosFiltro: any = [];
+  loading = true;
+  constructor(public api: UrlService, public dialogRef: MatDialogRef<CarrosModelosComponent>, public print: PrintService, public dialog: MatDialog, public actroute: ActivatedRoute, public router: Router) { }
 
-  constructor(private api: UrlService, public dialogRef: MatDialogRef<CarrosModelosComponent>, public _data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {
-    setTimeout(() => {
-      this.veiculos = this._data.getVeiculos();
-      this.veiculosFiltro = this.veiculos;
-    }, 600);
+    this.carregarModelos();
+  }
+
+  carregarModelos() {
+    this.api.getVeiculosMarca().subscribe(
+      res => {
+        this.veiculosFiltro = res;
+        this.veiculos = res;
+        this.loading = false;
+      },
+    )
   }
 
   closeDialog() {
@@ -30,19 +39,17 @@ export class CarrosModelosComponent implements OnInit {
   }
 
   mostraAutomovel(id_auto) {
-    if (id_auto != 0) {
-      this._data.setAutomovel(id_auto);
-      let dialogRef = this.dialog.open(CarrosAnosComponent, {
-        width: '600px',
-      });
-      dialogRef.updatePosition();
-    }
+    this.api.id_veiculo = id_auto;
+    let dialogRef = this.dialog.open(CarrosAnosComponent, {
+      width: '600px',
+    });
+    dialogRef.updatePosition();
   }
 
   aplicaFiltro(value) {
     this.veiculosFiltro = [];
     this.veiculosFiltro = this.veiculos.filter(function (m) {
-      return m.name.toUpperCase().startsWith(value.toUpperCase());
+      return m.name.toUpperCase().includes(value.toUpperCase());
     })
   }
 }

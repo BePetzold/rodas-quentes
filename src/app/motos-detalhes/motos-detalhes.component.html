@@ -1,11 +1,14 @@
-<div [class]="_data.det">
+<div [class]="print.det">
   <div class="fechar" mat-dialog-actions>
     <button mat-button (click)="closeDialog()" class="btn btn-outline-light">X</button>
   </div>
 </div>
 
 <h1 mat-dialog-title>INFORMAÇÕES</h1>
-<div class="flex-container" id="popup">
+<p *ngIf="loading">
+  <ngb-progressbar type="dark" [value]="100" [striped]="true" [animated]="true">Carregando...</ngb-progressbar>
+</p>
+<div class="flex-container" id="popup" *ngIf="!loading">
   <div><span>MARCA: </span><br>{{detalhe.marca}} </div>
   <div *ngIf="detalhe.veiculo"><span>MODELO: </span><br>{{detalhe.veiculo}} </div>
   <div *ngIf="detalhe.veiculo==null"><span>MODELO: </span><br>{{detalhe.name}} </div>
@@ -16,16 +19,16 @@
 </div>
 
 <br>
-<div [class]="_data.imagem">
+<div [class]="print.imagem">
   <app-data></app-data>
 </div>
 
-<div [class]="_data.imagem">
-  <img src="https://image.ibb.co/mWdVw9/oie_CIi8j_WHYu0oo.png">
+<div [class]="print.imagem">
+  <img src="../../assets/img/logo.png">
 </div>
 
-<div [class]="_data.det">
-  <div class="print">
+<div [class]="print.det">
+  <div class="print" *ngIf="!loading">
     <button class="btn btn-outline-light" id="printButton" (click)="change()">IMPRIMIR INFORMAÇÕES</button>
   </div>
 </div>
